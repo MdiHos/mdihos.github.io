@@ -128,11 +128,19 @@ body {
     background-image: url(../img/telegram.png);
     width: 26px;
     height: 26px;
+    margin-left: 4pt;
 }
 
 .googleplus {
     background-image: url(../img/google-plus.png);
     width: 40px;
+    height: 26px;
+}
+
+
+.linkedin {
+    background-image: url(../img/linkedin.png);
+    width: 26px;
     height: 26px;
 }
 

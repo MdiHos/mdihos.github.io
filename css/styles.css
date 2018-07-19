@@ -1,50 +1,50 @@
 * {
-    margin: 0;
     font-family: Roboto, sans-serif;
+    margin: 0;
 }
 
 main {
+    align-items: center;
     display: flex;
     flex-flow: column;
-    align-items: center;
     height: 100vh; /* do not change this to percent*/
 }
 
 .top-box {
-    display: flex;
-    flex-flow: column;
     align-items: center;
-    margin-top: 20px;
+    display: flex;
     flex: 0 0 auto;
+    flex-flow: column;
+    margin-top: 20px;
 }
 
 .bottom-box {
-    display: flex;
-    flex-flow: column;
     align-items: center;
     background: #eee;
-    margin-top: 16px;
-    border-top-right-radius: 75px;
-    border-top-left-radius: 75px;
     border: 1px solid rgb(204, 204, 204);
+    border-top-left-radius: 75px;
+    border-top-right-radius: 75px;
+    display: flex;
     flex: 1 1 auto;
+    flex-flow: column;
+    margin-top: 16px;
 }
 
 .identity {
-    width: fit-content;
-    border-radius: 100px;
-    padding: 15px 2px 15px 18px;
     align-items: center;
-    display: flex;
-    flex-flow: row;
     background: #eee;
     border: 1px solid rgb(204, 204, 204);
+    border-radius: 100px;
+    display: flex;
+    flex-flow: row;
+    padding: 15px 2px 15px 18px;
+    width: fit-content;
 }
 
 #full-name {
+    color: #444;
     font-family: Roboto, sans-serif;
     font-size: 36px;
-    color: #444;
 }
 
 #avatar {
@@ -53,16 +53,16 @@ main {
 }
 
 .honors-socials {
-    width: 90%;
+    align-items: center;
     display: flex;
     flex-flow: column;
-    align-items: center;
+    width: 90%;
 }
 
 .honors {
+    align-items: center;
     display: flex;
     flex-flow: row;
-    align-items: center;
     justify-content: space-evenly;
     margin-top: 20px;
     width: 100%;
@@ -73,27 +73,27 @@ main {
 }
 
 .socials {
-    display: flex;
-    flex-flow: row;
     align-items: center;
-    justify-content: space-around;
-    border-radius: 100px;
-    width: 96%;
-    margin-top: 20px;
     background: #eee;
     border: 1px solid rgb(204, 204, 204);
+    border-radius: 100px;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    margin-top: 20px;
+    width: 96%;
 }
 
 .social {
-    margin: 10px 20px;
+    margin: 8px 20px 4px;
 }
 
 .works {
+    align-items: center;
     display: flex;
     flex-flow: column;
-    align-items: center;
-    padding-bottom: 18px;
     min-height: fit-content;
+    padding-bottom: 18px;
 }
 
 #works-title {
@@ -102,12 +102,12 @@ main {
 }
 
 .work {
+    align-items: center;
     display: flex;
     flex-flow: row;
-    align-items: center;
     justify-content: space-between;
-    padding: 0 40px;
     margin-top: 20px;
+    padding: 0 40px;
     text-decoration: none;
 }
 

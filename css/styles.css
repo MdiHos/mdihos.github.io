@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    font-family: Roboto, sans-serif;
+}
+
+main {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    height: 100vh; /* do not change this to percent*/
+}
+
+.top-box {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    margin-top: 20px;
+    flex: 0 0 auto;
+}
+
+.bottom-box {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    background: #eee;
+    margin-top: 16px;
+    border-top-right-radius: 75px;
+    border-top-left-radius: 75px;
+    border: 1px solid rgb(204, 204, 204);
+    flex: 1 1 auto;
+}
+
+.identity {
+    width: fit-content;
+    border-radius: 100px;
+    padding: 15px 2px 15px 18px;
+    align-items: center;
+    display: flex;
+    flex-flow: row;
+    background: #eee;
+    border: 1px solid rgb(204, 204, 204);
+}
+
+#full-name {
+    font-family: Roboto, sans-serif;
+    font-size: 36px;
+    color: #444;
+}
+
+#avatar {
+    border-radius: 50%;
+    margin-left: 20px;
+}
+
+.honors-socials {
+    width: 90%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+.honors {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.honor {
+    width: 208px;
+}
+
+.socials {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 100px;
+    width: 96%;
+    margin-top: 20px;
+    background: #eee;
+    border: 1px solid rgb(204, 204, 204);
+}
+
+.social {
+    margin: 10px 20px;
+}
+
+.works {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    padding-bottom: 18px;
+    min-height: fit-content;
+}
+
+#works-title {
+    font-weight: bold;
+    margin-top: 16px;
+}
+
+.work {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    margin-top: 20px;
+    text-decoration: none;
+}
+
+.work:visited {
+    color: #000;
+}
+
+.work img {
+    margin-right: 24px;
+}
+
+.work:nth-child(1) img, .work:nth-child(3) img, .work:nth-child(4) img {
+    width: 44px;
+}
+
+.work:nth-child(2) img {
+    width: 50px;
+}
+
+/*this solves the problem when device height is low and causes .works height to reduce*/
+@media all and (max-height: 655px) {
+    html body main {
+        height: 100%;
+    }
+}

@@ -64,7 +64,7 @@ main {
     display: flex;
     flex-flow: row;
     justify-content: space-evenly;
-    margin-top: 12px;
+    margin-top: 15px;
     width: 100%;
 }
 

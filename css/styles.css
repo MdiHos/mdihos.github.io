@@ -80,7 +80,7 @@ main {
     border: 1px solid rgb(204, 204, 204);
     background: #eee;
     border-right: none;
-    right: -1px;
+    right: -2px;
     border-top-left-radius: 50px;
     border-bottom-left-radius: 50px
 }
@@ -93,7 +93,7 @@ main {
     border: 1px solid rgb(204, 204, 204);
     background: #eee;
     border-left: none;
-    left: -1px;
+    left: -2px;
     border-top-right-radius: 50px;
     border-bottom-right-radius: 50px
 }

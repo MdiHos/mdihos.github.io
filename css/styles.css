@@ -38,7 +38,7 @@ main {
     display: flex;
     flex-flow: row;
     padding: 15px 2px 15px 18px;
-    width: fit-content;
+    width: 490px;
 }
 
 #full-name {
@@ -56,19 +56,49 @@ main {
     align-items: center;
     display: flex;
     flex-flow: column;
-    width: 90%;
+    width: 95%;
 }
 
 .honors {
     align-items: center;
     display: flex;
     flex-flow: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
     margin-top: 15px;
     width: 100%;
 }
 
 .honor {
+    display: flex;
+}
+
+.arc-left {
+    display: inline-block;
+    position: relative;
+    width: 28px;
+    height: 56px;
+    border: 1px solid rgb(204, 204, 204);
+    background: #eee;
+    border-right: none;
+    right: -1px;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px
+}
+
+.arc-right {
+    display: inline-block;
+    position: relative;
+    width: 28px;
+    height: 56px;
+    border: 1px solid rgb(204, 204, 204);
+    background: #eee;
+    border-left: none;
+    left: -1px;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px
+}
+
+.honor-img {
     width: 208px;
 }
 

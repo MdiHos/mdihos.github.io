@@ -45,6 +45,7 @@ main {
     color: #292929;
     font-family: Roboto, sans-serif;
     font-size: 36px;
+    text-shadow: 1px 1px #aaa;
 }
 
 #avatar {
@@ -144,6 +145,10 @@ main {
 
 .work, .work:visited {
     color: #333;
+}
+
+.work .name {
+    text-shadow: 1px 1px #ddd;
 }
 
 .work img {

@@ -45,7 +45,7 @@ main {
     color: #292929;
     font-family: Roboto, sans-serif;
     font-size: 36px;
-    text-shadow: 1px 1px #aaa;
+    text-shadow: 0 1px #aaa;
 }
 
 #avatar {

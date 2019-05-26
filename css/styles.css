@@ -164,62 +164,104 @@ main {
     width: 50px;
 }
 
-.favorite-songs {
+.favorite-songs, .recommended-books {
     display: flex;
     flex-flow: column;
     position: fixed;
     bottom: 50%;
     transform: translate(0%, 50%); /* To center vertically */
-    left: 0;
     width: auto;
     height: auto;
 }
 
-.favorite-songs .header {
+.favorite-songs {
+    left: 0;
+}
+
+.recommended-books {
+    right: 0;
+    align-items: flex-end;
+}
+
+.favorite-songs .header, .recommended-books .header {
     margin-bottom: 10px;
     background: #eee;
     border: 1px solid rgb(204, 204, 204);
-    border-top-right-radius: 100px;
-    border-bottom-right-radius: 100px;
     text-align: center;
     padding: 20px;
     width: fit-content;
 }
 
-.song {
-    display: flex;
-    flex-flow: row;
-    background: #eee;
-    padding-right: 30px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+.favorite-songs .header {
     border-top-right-radius: 100px;
     border-bottom-right-radius: 100px;
+}
+
+.recommended-books .header {
+    border-top-left-radius: 100px;
+    border-bottom-left-radius: 100px;
+}
+
+.song, .book {
+    display: flex;
+    flex-flow: row;
+    height: 60px;
+    background: #eee;
+    padding-top: 8px;
+    padding-bottom: 8px;
     margin-top: 20px;
     align-items: center;
     justify-content: space-between;
-    transform: translateX(-300px);
     transition: 300ms;
 }
 
-.song audio {
-    width: 300px;
-    height: 40px;
+.song {
+    padding-right: 30px;
+    border-top-right-radius: 100px;
+    border-bottom-right-radius: 100px;
+    transform: translateX(-300px);
 }
 
-.song img {
+.book {
+    padding-left: 30px;
+    border-top-left-radius: 100px;
+    border-bottom-left-radius: 100px;
+    transform: translateX(300px);
+}
+
+.song audio, .book .name {
+    display: block;
+    width: 300px;
+    height: 40px;
+    line-height: 40px;
+}
+
+.song img, .book img {
     width: 50px;
     height: 50px;
     border-radius: 4px;
+}
+
+.song img {
     margin-left: 20px;
 }
 
-.song .name {
-    text-align: center;
-    font-size: 12px;
+.book img {
+    margin-right: 20px;
+    object-fit: contain;
 }
 
-.song:hover {
+.song .name, .book .author {
+    text-align: center;
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+.book .author {
+    text-align: start;
+}
+
+.song:hover, .book:hover {
     transform: translateX(0px);
 }
 

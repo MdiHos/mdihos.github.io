@@ -164,6 +164,65 @@ main {
     width: 50px;
 }
 
+.favorite-songs {
+    display: flex;
+    flex-flow: column;
+    position: fixed;
+    bottom: 50%;
+    transform: translate(0%, 50%); /* To center vertically */
+    left: 0;
+    width: auto;
+    height: auto;
+}
+
+.favorite-songs .header {
+    margin-bottom: 10px;
+    background: #eee;
+    border: 1px solid rgb(204, 204, 204);
+    border-top-right-radius: 100px;
+    border-bottom-right-radius: 100px;
+    text-align: center;
+    padding: 20px;
+    width: fit-content;
+}
+
+.song {
+    display: flex;
+    flex-flow: row;
+    background: #eee;
+    padding-right: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-top-right-radius: 100px;
+    border-bottom-right-radius: 100px;
+    margin-top: 20px;
+    align-items: center;
+    justify-content: space-between;
+    transform: translateX(-300px);
+    transition: 300ms;
+}
+
+.song audio {
+    width: 300px;
+    height: 40px;
+}
+
+.song img {
+    width: 50px;
+    height: 50px;
+    border-radius: 4px;
+    margin-left: 20px;
+}
+
+.song .name {
+    text-align: center;
+    font-size: 12px;
+}
+
+.song:hover {
+    transform: translateX(0px);
+}
+
 /*this solves the problem when device height is low and causes .works height to reduce*/
 @media all and (max-height: 655px) {
     html body main {

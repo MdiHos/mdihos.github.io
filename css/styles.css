@@ -3,6 +3,12 @@
     margin: 0;
 }
 
+#copyright {
+    font-size: 10px;
+    position: fixed;
+    bottom: 0;
+}
+
 main {
     align-items: center;
     display: flex;

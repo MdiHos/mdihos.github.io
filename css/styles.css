@@ -198,6 +198,10 @@ main {
     width: fit-content;
 }
 
+.favorite-songs .header, .recommended-books .header {
+    width: 160px;
+}
+
 .favorite-songs .header {
     border-top-right-radius: 100px;
     border-bottom-right-radius: 100px;

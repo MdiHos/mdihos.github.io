@@ -165,11 +165,11 @@ main {
     max-width: 50px;
 }
 
-#buyt img {
+.unreleased img {
     filter: grayscale(100%);
 }
 
-#buyt:hover img {
+.unreleased:hover img {
     filter: none;
 }
 

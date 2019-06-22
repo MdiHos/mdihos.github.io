@@ -144,7 +144,9 @@ main {
     align-items: center;
     display: flex;
     flex-flow: row;
-    justify-content: space-between;
+    justify-content: flex-start;
+    width: -webkit-fill-available;
+    width: -moz-available;
     margin-top: 22px;
     padding: 0 40px;
     text-decoration: none;
@@ -160,14 +162,11 @@ main {
 
 .work img {
     margin-right: 24px;
+    max-width: 50px;
 }
 
-.work:nth-child(1) img, .work:nth-child(3) img, .work:nth-child(4) img {
-    width: 44px;
-}
-
-.work:nth-child(2) img {
-    width: 50px;
+#tineep img, #espot img {
+    width: 46px;
 }
 
 .favorite-songs, .recommended-books {

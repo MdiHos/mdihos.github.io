@@ -165,6 +165,14 @@ main {
     max-width: 50px;
 }
 
+#buyt img {
+    filter: grayscale(100%);
+}
+
+#buyt:hover img {
+    filter: none;
+}
+
 #tineep img, #espot img {
     width: 46px;
 }

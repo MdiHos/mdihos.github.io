@@ -1,7 +1,0 @@
-username
-    font: Arial, bold, 80pt
-    color: 0, 119, 204
-
-number
-    font: Arial, bold, 88pt
-    color: 68, 68, 68

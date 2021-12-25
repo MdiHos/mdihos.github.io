@@ -6,6 +6,8 @@ Make sure to first install Angular CLI with the command `npm install -g @angular
 It is possible to deploy directly to GitHub pages with the official
 [angular-cli-ghpages](https://www.npmjs.com/package/angular-cli-ghpages) package.
 
+To build or serve the application in production mode in IntelliJ, see [this post](https://stackoverflow.com/q/51127798).
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.

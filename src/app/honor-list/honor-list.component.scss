@@ -32,9 +32,9 @@
   border: 1px solid rgb(204, 204, 204);
   background: #eee;
   border-inline-end: none;
-  right: -2px; // TODO: Replace with inset-inline-end when major browsers start supporting it
-  border-top-left-radius: 50px; // TODO: Replace with border-start-start-radius when major browsers start supporting it
-  border-bottom-left-radius: 50px // TODO: Replace with border-end-start-radius when major browsers start supporting it
+  inset-inline-end: -2px;
+  border-start-start-radius: 50px;
+  border-end-start-radius: 50px;
 }
 
 #arc-right {
@@ -45,7 +45,7 @@
   border: 1px solid rgb(204, 204, 204);
   background: #eee;
   border-inline-start: none;
-  left: -2px; // TODO: Replace with inset-inline-start when major browsers start supporting it
-  border-top-right-radius: 50px; // TODO: Replace with border-start-end-radius when major browsers start supporting it
-  border-bottom-right-radius: 50px // TODO: Replace with border-end-end-radius when major browsers start supporting it
+  inset-inline-start: -2px;
+  border-start-end-radius: 50px;
+  border-end-end-radius: 50px;
 }

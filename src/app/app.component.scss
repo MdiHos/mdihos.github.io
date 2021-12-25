@@ -41,8 +41,8 @@ app-project-list {
   flex: 1 1 auto;
   flex-flow: column;
   border: 1px solid rgb(204, 204, 204);
-  border-top-left-radius: 75px; // TODO: Replace with border-start-start-radius when major browsers start supporting it
-  border-top-right-radius: 75px; // TODO: Replace with border-start-end-radius when major browsers start supporting it
+  border-start-start-radius: 75px;
+  border-start-end-radius: 75px;
 }
 
 app-favorite-song-list, app-recommended-book-list {
@@ -50,22 +50,22 @@ app-favorite-song-list, app-recommended-book-list {
   width: auto;
   height: auto;
   position: fixed;
-  bottom: 50%; // TODO: Replace with inset-block-end when major browsers start supporting it
+  inset-block-end: 50%;
   flex-flow: column;
   transform: translate(0%, 50%); /* To center vertically */
 }
 
 app-favorite-song-list {
-  left: 0; // TODO: Replace with inset-inline-start when major browsers start supporting it
+  inset-inline-start: 0;
   align-items: flex-start;
 }
 
 app-recommended-book-list {
-  right: 0; // TODO: Replace with inset-inline-end when major browsers start supporting it
+  inset-inline-end: 0;
   align-items: flex-end;
 }
 
 footer {
   position: fixed;
-  bottom: 0; // TODO: Replace with inset-block-end when major browsers start supporting it
+  inset-block-end: 0;
 }

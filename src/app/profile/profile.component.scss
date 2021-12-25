@@ -2,7 +2,7 @@
   display: flex;
   width: 490px;
   background: #eee;
-  padding: 15px 2px 15px 18px; // TODO: Replace with padding-inline and padding-block properties when major browsers start supporting them
+  padding: 15px 2px 15px 18px;
   align-items: center;
   flex-flow: row;
   border: 1px solid rgb(204, 204, 204);
@@ -20,4 +20,3 @@
     box-shadow: 0 1px #aaa;
   }
 }
-

@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 
 @Component({
-  selector: 'app-favorite-book-list',
+  selector: 'app-recommended-book-list',
   templateUrl: './favorite-book-list.component.html',
   styleUrls: ['./favorite-book-list.component.scss']
 })

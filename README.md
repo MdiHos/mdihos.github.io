@@ -3,6 +3,9 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.6.
 Make sure to first install Angular CLI with the command `npm install -g @angular/cli`.
 
+It is possible to deploy directly to GitHub pages with the official
+[angular-cli-ghpages](https://www.npmjs.com/package/angular-cli-ghpages) package.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.

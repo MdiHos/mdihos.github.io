@@ -5,6 +5,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: Roboto-Slab-Bold;
+  src: url("src/assets/font/roboto-slab-latin-bold.woff2");
+  font-weight: bold;
+  font-style: normal;
+}
+
 * {
   font-family: Roboto, sans-serif;
   margin: 0;

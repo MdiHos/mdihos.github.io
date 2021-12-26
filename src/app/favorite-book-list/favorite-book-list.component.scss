@@ -9,13 +9,13 @@
   border-end-end-radius: 100px;
 }
 
-.song {
+.book {
   display: flex;
   height: 60px;
   background: #eee;
   padding-block-start: 8px;
-  padding-inline-end: 30px;
   padding-block-end: 8px;
+  padding-inline-end: 30px;
   margin-block-start: 20px;
   align-items: center;
   flex-flow: row;
@@ -25,15 +25,12 @@
   border-start-end-radius: 100px;
   border-end-end-radius: 100px;
 
-  &:hover {
-    transform: translateX(0px);
-  }
-
-  audio {
+  .name {
     display: block;
     line-height: 40px;
     width: 300px;
     height: 40px;
+    text-align: end;
   }
 
   img {
@@ -41,11 +38,16 @@
     height: 50px;
     margin-inline-start: 20px;
     border-radius: 4px;
+    object-fit: contain;
   }
 
-  .name {
+  .author {
     font-size: 12px;
-    margin-block-start: 4px;
-    text-align: center;
+    margin-block-end: 4px;
+    text-align: end;
+  }
+
+  &:hover {
+    transform: translateX(0px);
   }
 }

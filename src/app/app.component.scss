@@ -45,7 +45,7 @@ app-project-list {
   border-start-end-radius: 75px;
 }
 
-app-favorite-song-list, app-recommended-book-list {
+app-favorite-book-list, app-recommended-book-list {
   display: flex;
   width: auto;
   height: auto;
@@ -55,7 +55,7 @@ app-favorite-song-list, app-recommended-book-list {
   transform: translate(0%, 50%); /* To center vertically */
 }
 
-app-favorite-song-list {
+app-favorite-book-list {
   inset-inline-start: 0;
   align-items: flex-start;
 }

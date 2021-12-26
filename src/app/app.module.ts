@@ -7,7 +7,7 @@ import {ProfileComponent} from './profile/profile.component';
 import {HonorListComponent} from './honor-list/honor-list.component';
 import {SocialLinkListComponent} from './social-link-list/social-link-list.component';
 import {ProjectListComponent} from './project-list/project-list.component';
-import {FavoriteSongListComponent} from './favorite-song-list/favorite-song-list.component';
+import {FavoriteBookListComponent} from './favorite-book-list/favorite-book-list.component';
 import {RecommendedBookListComponent} from './recommended-book-list/recommended-book-list.component';
 import {AutographComponent} from './autograph/autograph.component';
 
@@ -18,7 +18,7 @@ import {AutographComponent} from './autograph/autograph.component';
     HonorListComponent,
     ProjectListComponent,
     SocialLinkListComponent,
-    FavoriteSongListComponent,
+    FavoriteBookListComponent,
     RecommendedBookListComponent,
     AutographComponent
   ],

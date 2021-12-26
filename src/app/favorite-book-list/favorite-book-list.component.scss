@@ -45,6 +45,8 @@
     font-size: 12px;
     margin-block-end: 4px;
     text-align: end;
+
+    &:before { content: "by "; }
   }
 
   &:hover {

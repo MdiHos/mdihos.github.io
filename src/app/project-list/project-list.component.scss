@@ -4,6 +4,7 @@
   padding-block-end: 18px;
   align-items: center;
   flex-flow: column;
+  padding: 0 40px;
 }
 
 #works-title {
@@ -14,9 +15,7 @@
 
 .work {
   display: flex;
-  width: -webkit-fill-available;
-  width: -moz-available;
-  padding: 0 40px;
+  width: 128px;
   margin-block-start: 22px;
   align-items: center;
   flex-flow: row;

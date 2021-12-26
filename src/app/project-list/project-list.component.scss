@@ -49,3 +49,8 @@
   max-width: 50px;
   margin-inline-end: 10px;
 }
+
+#donim img {
+  // Make the logo less prominent
+  filter: opacity(80%);
+}

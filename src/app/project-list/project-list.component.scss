@@ -14,16 +14,19 @@
 }
 
 .tbd {
-  text-decoration: underline;
+  img { filter: grayscale(1); }
+
   span::after {
-    content: "\00a0?";
-    font-size: 11px;
+    content: ""; // Prevent the main text from jiggling
+    font-size: 10px;
     width: 20px;
     height: 20px;
     vertical-align: super;
   }
-  &:hover span::after {
-    content: "\00a0(TBD)";
+
+  &:hover {
+    img { filter: none; }
+    span::after { content: "\00a0(TBD)"; }
   }
 }
 

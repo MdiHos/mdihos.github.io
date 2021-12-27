@@ -30,14 +30,6 @@
   border-end-start-radius: var(--arc-border-radious);
 }
 
-#github-mark {
-  margin-inline-start: 4px;
-}
-
-#stackoverflow-mark {
-  margin-inline-end: 4px;
-}
-
 #github-info, #stackoverflow-info {
   display: flex;
   flex-direction: column;

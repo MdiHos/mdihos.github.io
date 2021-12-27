@@ -39,12 +39,13 @@
   img { height: 12px; }
 
   #reputation {
-    &:before{
+    &:before {
       color: #000;
       content: "Reputation: ";
     }
+
     color: hsl(114, 92%, 33%);
-    margin-block-start: 6px;
+    margin-block-start: 7px;
   }
 }
 
@@ -57,14 +58,19 @@
 
   img { height: 12px; }
 
-  #repo-count { margin-block-start: 6px; }
+  #repositories {
+    span{ color: hsl(114, 92%, 33%); }
+    margin-block-start: 7px;
+  }
+
+  #gists{ font-size: 9px; }
 }
 
 .badge {
   &:before { content: " ⬤ "; }
 
-  margin-inline-end: 8px;
   font-size: 9px;
+  margin-inline-end: 8px;
 }
 
 .gold-badge {

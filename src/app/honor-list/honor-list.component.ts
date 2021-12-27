@@ -11,6 +11,10 @@ import {throwError} from 'rxjs';
 export class HonorListComponent implements OnInit {
 
   repoCount: number;
+  reputation: number;
+  goldBadge: number;
+  silverBadge: number;
+  bronzeBadge: number;
 
   constructor(private http: HttpClient) {}
 
@@ -21,11 +25,24 @@ export class HonorListComponent implements OnInit {
         retry(5), // Retry a failed request up to 5 times
         catchError(this.handleError) // Then handle the error
       )
-      .subscribe((data: Array<any>) => this.repoCount = data.public_repos);
-    /* OR
-      .get('https://api.github.com/users/mahozad/repos')
-      .subscribe((data: Array<any>) => this.repoCount = data.length);
-    */
+      .subscribe((data: Array<any>) => {
+        this.repoCount = data.public_repos;
+      });
+
+    this.http
+      .get('https://api.stackexchange.com/2.3/users/8583692?site=stackoverflow')
+      .pipe(
+        retry(5), // Retry a failed request up to 5 times
+        catchError(this.handleError) // Then handle the error
+      )
+      .subscribe((data: Array<any>) => {
+          console.log(data);
+          this.reputation = data.items[0].reputation;
+          this.goldBadge = data.items[0].badge_counts.gold;
+          this.silverBadge = data.items[0].badge_counts.silver;
+          this.bronzeBadge = data.items[0].badge_counts.bronze;
+        }
+      );
   }
 
   private handleError(error: HttpErrorResponse) {

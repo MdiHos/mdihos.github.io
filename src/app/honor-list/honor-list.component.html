@@ -1,7 +1,17 @@
 <div id="stackoverflow-stats" class="honor">
   <div id="arc-left"></div>
   <a href="https://stackoverflow.com/users/8583692/mahozad">
-    <img class="honor-img" src="https://stackoverflow.com/users/flair/8583692.png" alt="Stackoverflow flair">
+    <div id="stackoverflow-info">
+      <img src="/assets/img/stackoverflow-logo.svg" alt="Stackoverflow logo">
+      <p id="reputation">{{reputation}}</p>
+      <p id="badges">
+        <span class="badge gold-badge">{{goldBadge}}</span>
+        <span class="badge silver-badge">{{silverBadge}}</span>
+        <span class="badge bronze-badge">{{bronzeBadge}}</span>
+      </p>
+    </div>
+    <img id="stackoverflow-mark" src="/assets/img/stackoverflow-mark.svg" alt="Stackoverflow mark" height="48px">
+    <!--<img class="honor-img" src="https://stackoverflow.com/users/flair/8583692.png" alt="Stackoverflow flair">-->
   </a>
 </div>
 

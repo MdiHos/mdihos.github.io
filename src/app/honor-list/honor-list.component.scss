@@ -2,23 +2,30 @@
   display: flex;
 }
 
-.honor-img {
-  width: 208px;
+#github-stats, #stackoverflow-stats {
+  padding: 8px;
+  background: #eee;
+  border: 1px solid rgb(204, 204, 204);
+  width: 160px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+
+  &:visited { color: #333; }
 }
 
-#github-stats, #stackoverflow-stats {
-  a {
-    width: 208px;
-    background: #eee;
-    border: solid 1px #ccc;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    text-decoration: none;
+#github-stats {
+  padding-inline-end: 54px;
+  border-start-end-radius: 50px;
+  border-end-end-radius: 50px;
+}
 
-    &:visited { color: #333; }
-  }
+#stackoverflow-stats {
+  padding-inline-start: 54px;
+  border-start-start-radius: 50px;
+  border-end-start-radius: 50px;
 }
 
 #github-mark {
@@ -29,47 +36,33 @@
   margin-inline-end: 4px;
 }
 
-#stackoverflow-info {
+#github-info, #stackoverflow-info {
   display: flex;
   flex-direction: column;
-  align-items: start;
-  margin-inline-start: 3px;
   font-size: 11px;
 
   img { height: 12px; }
 
-  #reputation {
-    &:before {
-      color: #000;
-      content: "Reputation: ";
-    }
+  .first-line {
+    span { color: hsl(114, 92%, 33%); }
 
-    color: hsl(114, 92%, 33%);
-    margin-block-start: 7px;
+    margin-block-start: 10px;
   }
+
+  .second-line{ font-size: 9px; }
 }
 
 #github-info {
-  display: flex;
-  flex-direction: column;
   align-items: end;
-  margin-inline-end: 3px;
-  font-size: 11px;
+}
 
-  img { height: 12px; }
-
-  #repositories {
-    span{ color: hsl(114, 92%, 33%); }
-    margin-block-start: 7px;
-  }
-
-  #gists{ font-size: 9px; }
+#stackoverflow-info {
+  align-items: start;
 }
 
 .badge {
   &:before { content: " ⬤ "; }
 
-  font-size: 9px;
   margin-inline-end: 8px;
 }
 
@@ -83,30 +76,4 @@
 
 .bronze-badge {
   &:before { color: #cd7f32; }
-}
-
-#arc-left {
-  display: inline-block;
-  position: relative;
-  width: 28px;
-  height: 56px;
-  border: 1px solid rgb(204, 204, 204);
-  background: #eee;
-  border-inline-end: none;
-  inset-inline-end: -2px;
-  border-start-start-radius: 50px;
-  border-end-start-radius: 50px;
-}
-
-#arc-right {
-  display: inline-block;
-  position: relative;
-  width: 28px;
-  height: 56px;
-  border: 1px solid rgb(204, 204, 204);
-  background: #eee;
-  border-inline-start: none;
-  inset-inline-start: -2px;
-  border-start-end-radius: 50px;
-  border-end-end-radius: 50px;
 }

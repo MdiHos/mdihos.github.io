@@ -14,11 +14,11 @@ app-profile {
 
 app-honor-list {
   display: flex;
-  width: 96%;
   margin-block-start: 16px;
   align-items: center;
   flex-flow: row;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 16px;
 }
 
 app-social-link-list {

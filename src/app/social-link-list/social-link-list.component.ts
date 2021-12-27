@@ -7,6 +7,9 @@ import {Component, OnInit} from '@angular/core';
 })
 export class SocialLinkListComponent implements OnInit {
 
+  // See this post: https://stackoverflow.com/q/163628
+  address = 'legacyazd@gmail.com';
+
   constructor() {}
 
   ngOnInit(): void {}

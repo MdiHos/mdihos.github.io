@@ -11,6 +11,7 @@ import {throwError} from 'rxjs';
 export class HonorListComponent implements OnInit {
 
   repoCount: number;
+  gistCount: number;
   reputation: number;
   goldBadge: number;
   silverBadge: number;
@@ -27,6 +28,7 @@ export class HonorListComponent implements OnInit {
       )
       .subscribe((data: Array<any>) => {
         this.repoCount = data.public_repos;
+        this.gistCount = data.public_gists;
       });
 
     this.http

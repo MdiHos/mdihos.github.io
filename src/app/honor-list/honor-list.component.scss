@@ -1,4 +1,6 @@
 .honor {
+  --arc-padding: 36px;
+  --arc-border-radious: 50px;
   display: flex;
 }
 
@@ -17,15 +19,15 @@
 }
 
 #github-stats {
-  padding-inline-end: 54px;
-  border-start-end-radius: 50px;
-  border-end-end-radius: 50px;
+  padding-inline-end: var(--arc-padding);
+  border-start-end-radius: var(--arc-border-radious);
+  border-end-end-radius: var(--arc-border-radious);
 }
 
 #stackoverflow-stats {
-  padding-inline-start: 54px;
-  border-start-start-radius: 50px;
-  border-end-start-radius: 50px;
+  padding-inline-start: var(--arc-padding);
+  border-start-start-radius: var(--arc-border-radious);
+  border-end-start-radius: var(--arc-border-radious);
 }
 
 #github-mark {

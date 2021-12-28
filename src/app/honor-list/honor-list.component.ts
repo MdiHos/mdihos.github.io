@@ -12,6 +12,9 @@ export class HonorListComponent implements OnInit {
 
   repoCount: number;
   gistCount: number;
+  followers: number;
+  contributions: number;
+
   reputation: number;
   goldBadge: number;
   silverBadge: number;
@@ -29,7 +32,19 @@ export class HonorListComponent implements OnInit {
       .subscribe((data: any) => {
         this.repoCount = data.public_repos;
         this.gistCount = data.public_gists;
+        this.followers = data.followers;
       });
+
+    this
+      .getGitHubContributions()
+      .then(result =>
+        this.contributions = result
+          .data
+          .viewer
+          .contributionsCollection
+          .contributionCalendar
+          .totalContributions
+      );
 
     this.http
       .get('https://api.stackexchange.com/2.3/users/8583692?site=stackoverflow')
@@ -45,6 +60,20 @@ export class HonorListComponent implements OnInit {
           this.bronzeBadge = data.items[0].badge_counts.bronze;
         }
       );
+  }
+
+  async getGitHubContributions() {
+    const headers = {
+      Authorization: `bearer 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`
+    };
+    const body = {
+      'query': 'query {viewer {contributionsCollection {contributionCalendar {totalContributions}}}}'
+    };
+    const response = await fetch(
+      'https://api.github.com/graphql',
+      {method: 'POST', body: JSON.stringify(body), headers: headers}
+    );
+    return await response.json();
   }
 
   private handleError(error: HttpErrorResponse) {

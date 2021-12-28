@@ -8,6 +8,22 @@ It is possible to deploy directly to GitHub pages with the official
 
 To build or serve the application in production mode in IntelliJ, see [this post](https://stackoverflow.com/q/51127798).
 
+### Fonts
+The main header uses a serif font called *Roboto Slab*.
+Rest of the site uses the san-serif font *Roboto*.
+
+These fonts are free and can be downloaded from [Google fonts site](https://fonts.google.com/).
+
+Note that the woff2 version of those two fonts were obtained from third-party
+sites (which may have created them by converting their original format to woff2).
+
+Other serif fonts for the header:
+  - Bitter **bold**
+  - Exo **bold**
+  - Gilroy **extra bold** (other wights were not free)
+  - Karma **bold**
+  - Philosopher **bold**
+
 ### Book previews
 The link to readable previews of books is obtained from the Amazon book page ->
 *Embed* link near the share buttons.

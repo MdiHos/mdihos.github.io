@@ -45,6 +45,17 @@
   .second-line{ font-size: 12px; }
 }
 
+.first-line, .second-line {
+  display: flex;
+  align-items: center;
+}
+
+.spinner {
+  display: inline-block;
+  content: url("/assets/img/spinner.svg");
+  height: 10px;
+}
+
 #github-info {
   align-items: end;
 }

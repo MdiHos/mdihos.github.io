@@ -24,8 +24,11 @@ interface Stackoverflow {
 })
 export class HonorListComponent implements OnInit {
 
-  github: Github = {contributions: '-', followers: '-', gists: '-', repos: '-'};
-  stackoverflow: Stackoverflow = {bronzeBadges: '-', goldBadges: '-', reputation: '-', silverBadges: '-'};
+  github: Github = {contributions: '', followers: '', gists: '', repos: ''};
+  stackoverflow: Stackoverflow = {bronzeBadges: '', goldBadges: '', reputation: '', silverBadges: ''};
+  isLoadingSO = true;
+  isLoadingGHRest = true;
+  isLoadingGHGraphQL = true;
 
   constructor(private http: HttpClient) {}
 
@@ -37,6 +40,7 @@ export class HonorListComponent implements OnInit {
         catchError(HonorListComponent.handleError) // Then handle the error
       )
       .subscribe((data: any) => {
+        this.isLoadingGHRest = false;
         this.github.repos = data.public_repos;
         this.github.gists = data.public_gists;
         this.github.followers = data.followers;
@@ -44,13 +48,15 @@ export class HonorListComponent implements OnInit {
 
     this
       .getGitHubContributions()
-      .then(result =>
-        this.github.contributions = result
-          .data
-          .viewer
-          .contributionsCollection
-          .contributionCalendar
-          .totalContributions
+      .then(result => {
+          this.isLoadingGHGraphQL = false;
+          this.github.contributions = result
+            .data
+            .viewer
+            .contributionsCollection
+            .contributionCalendar
+            .totalContributions;
+        }
       );
 
     this.http
@@ -60,6 +66,7 @@ export class HonorListComponent implements OnInit {
         catchError(HonorListComponent.handleError) // Then handle the error
       )
       .subscribe((data: any) => {
+          this.isLoadingSO = false;
           this.stackoverflow.reputation = data.items[0].reputation;
           this.stackoverflow.goldBadges = data.items[0].badge_counts.gold;
           this.stackoverflow.silverBadges = data.items[0].badge_counts.silver;

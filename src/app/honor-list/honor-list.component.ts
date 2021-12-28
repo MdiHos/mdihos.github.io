@@ -76,9 +76,7 @@ export class HonorListComponent implements OnInit {
   }
 
   async getGitHubContributions() {
-    const headers = {
-      Authorization: `bearer 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`
-    };
+    const headers = { Authorization: 'bearer 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' };
     const body = {
       'query': 'query {viewer {contributionsCollection {contributionCalendar {totalContributions}}}}'
     };

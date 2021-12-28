@@ -17,6 +17,18 @@ interface Stackoverflow {
   bronzeBadges: string;
 }
 
+/*
+* See [this post](https://stackoverflow.com/q/18262288)
+* and [this post](https://stackoverflow.com/q/44579877).
+* and [this post](https://stackoverflow.com/q/20714593)
+* to learn how to use GitHub GraphQL API for getting my contributions.
+*
+* For GraphQL queries we could also use [Apollo library](https://apollo-angular.com/).
+*
+* See [this](https://zoaibkhan.com/blog/how-to-add-loading-spinner-in-angular-with-rxjs/)
+* for how to add loading image when doing something in background.
+*/
+
 @Component({
   selector: 'app-honor-list',
   templateUrl: './honor-list.component.html',

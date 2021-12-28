@@ -3,6 +3,20 @@ import {HttpClient, HttpErrorResponse} from '@angular/common/http';
 import {catchError, retry} from 'rxjs/operators';
 import {throwError} from 'rxjs';
 
+interface Github {
+  repos: string;
+  gists: string;
+  followers: string;
+  contributions: string;
+}
+
+interface Stackoverflow {
+  reputation: string;
+  goldBadges: string;
+  silverBadges: string;
+  bronzeBadges: string;
+}
+
 @Component({
   selector: 'app-honor-list',
   templateUrl: './honor-list.component.html',
@@ -10,15 +24,8 @@ import {throwError} from 'rxjs';
 })
 export class HonorListComponent implements OnInit {
 
-  repoCount: number;
-  gistCount: number;
-  followers: number;
-  contributions: number;
-
-  reputation: number;
-  goldBadge: number;
-  silverBadge: number;
-  bronzeBadge: number;
+  github: Github = {contributions: '-', followers: '-', gists: '-', repos: '-'};
+  stackoverflow: Stackoverflow = {bronzeBadges: '-', goldBadges: '-', reputation: '-', silverBadges: '-'};
 
   constructor(private http: HttpClient) {}
 
@@ -27,18 +34,18 @@ export class HonorListComponent implements OnInit {
       .get('https://api.github.com/users/mahozad')
       .pipe(
         retry(5), // Retry a failed request up to 5 times
-        catchError(this.handleError) // Then handle the error
+        catchError(HonorListComponent.handleError) // Then handle the error
       )
       .subscribe((data: any) => {
-        this.repoCount = data.public_repos;
-        this.gistCount = data.public_gists;
-        this.followers = data.followers;
+        this.github.repos = data.public_repos;
+        this.github.gists = data.public_gists;
+        this.github.followers = data.followers;
       });
 
     this
       .getGitHubContributions()
       .then(result =>
-        this.contributions = result
+        this.github.contributions = result
           .data
           .viewer
           .contributionsCollection
@@ -50,14 +57,13 @@ export class HonorListComponent implements OnInit {
       .get('https://api.stackexchange.com/2.3/users/8583692?site=stackoverflow')
       .pipe(
         retry(5), // Retry a failed request up to 5 times
-        catchError(this.handleError) // Then handle the error
+        catchError(HonorListComponent.handleError) // Then handle the error
       )
       .subscribe((data: any) => {
-          console.log(data);
-          this.reputation = data.items[0].reputation;
-          this.goldBadge = data.items[0].badge_counts.gold;
-          this.silverBadge = data.items[0].badge_counts.silver;
-          this.bronzeBadge = data.items[0].badge_counts.bronze;
+          this.stackoverflow.reputation = data.items[0].reputation;
+          this.stackoverflow.goldBadges = data.items[0].badge_counts.gold;
+          this.stackoverflow.silverBadges = data.items[0].badge_counts.silver;
+          this.stackoverflow.bronzeBadges = data.items[0].badge_counts.bronze;
         }
       );
   }
@@ -76,7 +82,7 @@ export class HonorListComponent implements OnInit {
     return await response.json();
   }
 
-  private handleError(error: HttpErrorResponse) {
+  private static handleError(error: HttpErrorResponse) {
     if (error.status === 0) {
       // A client-side or network error occurred. Handle it accordingly.
       console.error('An error occurred: ', error.error);
@@ -86,6 +92,6 @@ export class HonorListComponent implements OnInit {
         `Backend returned code ${error.status}, body was: `, error.error);
     }
     // Return an observable with a user-facing error message.
-    return throwError('Could not get repository count.');
+    return throwError(() => 'Could not get repository count.');
   }
 }

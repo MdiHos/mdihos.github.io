@@ -36,8 +36,8 @@ interface Stackoverflow {
 })
 export class HonorListComponent implements OnInit {
 
-  github: Github = {contributions: '', followers: '', gists: '', repos: ''};
-  stackoverflow: Stackoverflow = {bronzeBadges: '', goldBadges: '', reputation: '', silverBadges: ''};
+  github = {contributions: '', repos: '', gists: '', followers: ''};
+  stackoverflow = {reputation: '', goldBadges: '', silverBadges: '', bronzeBadges: ''};
   isLoadingSO = true;
   isLoadingGHRest = true;
   isLoadingGHGraphQL = true;
@@ -49,7 +49,15 @@ export class HonorListComponent implements OnInit {
       .get('https://api.github.com/users/mahozad')
       .pipe(
         retry(5), // Retry a failed request up to 5 times
-        catchError(HonorListComponent.handleError) // Then handle the error
+        catchError(err => { // Then handle the error
+            return HonorListComponent.handleError(err, () => {
+              this.isLoadingGHRest = false;
+              this.github.repos = '-';
+              this.github.gists = '-';
+              this.github.followers = '-';
+            });
+          }
+        )
       )
       .subscribe((data: any) => {
         this.isLoadingGHRest = false;
@@ -69,13 +77,23 @@ export class HonorListComponent implements OnInit {
             .contributionCalendar
             .totalContributions;
         }
-      );
+      )
+      .catch(() => this.github.contributions = '-');
 
     this.http
       .get('https://api.stackexchange.com/2.3/users/8583692?site=stackoverflow')
       .pipe(
         retry(5), // Retry a failed request up to 5 times
-        catchError(HonorListComponent.handleError) // Then handle the error
+        catchError(err => { // Then handle the error
+            return HonorListComponent.handleError(err, () => {
+              this.isLoadingSO = false;
+              this.stackoverflow.reputation = '-';
+              this.stackoverflow.goldBadges = '-';
+              this.stackoverflow.silverBadges = '-';
+              this.stackoverflow.bronzeBadges = '-';
+            });
+          }
+        )
       )
       .subscribe((data: any) => {
           this.isLoadingSO = false;
@@ -99,7 +117,7 @@ export class HonorListComponent implements OnInit {
     return await response.json();
   }
 
-  private static handleError(error: HttpErrorResponse) {
+  private static handleError(error: HttpErrorResponse, callback: () => void) {
     if (error.status === 0) {
       // A client-side or network error occurred. Handle it accordingly.
       console.error('An error occurred: ', error.error);
@@ -108,6 +126,9 @@ export class HonorListComponent implements OnInit {
       console.error(
         `Backend returned code ${error.status}, body was: `, error.error);
     }
+
+    callback();
+
     // Return an observable with a user-facing error message.
     return throwError(() => 'Could not get repository count.');
   }

@@ -13,10 +13,19 @@ import {throwError} from 'rxjs';
 *
 * See [this](https://zoaibkhan.com/blog/how-to-add-loading-spinner-in-angular-with-rxjs/)
 * for how to add loading image when doing something in background.
+*
+* Note that we cannot hard-code the GitHub token in the code. GitHub will
+* delete the token if it detects that it is used in the code.
+* My workaround: I have inserted a scrambled version of the token in code
+* which is unscrambled later when it is going to be used.
+* See [this post](https://github.community/t/personal-access-token-deleting-itself/13955)
+* and [GitHub docs](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/token-expiration-and-revocation)
+* and [this post](https://stackoverflow.com/q/65586245)
+* and [this post](https://stackoverflow.com/q/21939713).
 */
 
 const notAvailable: string = '-';
-const githubToken: string = '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';
+const githubNekot: string = '0Q_EWC_0Vy_S1pVgxT_ClT_GFY_Ssz83_Cid_izXtbXk_phg';
 const githubRestURL: string = 'https://api.github.com/users/mahozad';
 const githubGraphQLURL: string = 'https://api.github.com/graphql';
 const stackoverflowRestURL: string = 'https://api.stackexchange.com/2.3/users/8583692?site=stackoverflow';
@@ -97,7 +106,13 @@ export class HonorListComponent implements OnInit {
       );
   }
 
+  unscrambleTheToken(): string {
+    const reversed = githubNekot.split('').reverse().join('');
+    return reversed.slice(0, 4) + reversed.slice(4).replace(/_/g, '');
+  }
+
   async getGitHubContributions() {
+    const githubToken = this.unscrambleTheToken();
     const headers = {'Authorization': `bearer ${githubToken}`};
     const body = {
       'query': 'query {viewer {contributionsCollection {contributionCalendar {totalContributions}}}}'

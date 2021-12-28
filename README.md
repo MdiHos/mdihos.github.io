@@ -8,6 +8,15 @@ It is possible to deploy directly to GitHub pages with the official
 
 To build or serve the application in production mode in IntelliJ, see [this post](https://stackoverflow.com/q/51127798).
 
+### Book previews
+The link to readable previews of books is obtained from the Amazon book page ->
+*Embed* link near the share buttons.
+This link may not be shown for all formats of the book.
+Change the book format, for example to *Kindle*, and see if that format has an
+*Embed* link.
+
+The embed links may redirect to the book page for Iran IP addresses.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.

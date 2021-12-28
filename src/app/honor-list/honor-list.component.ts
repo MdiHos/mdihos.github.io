@@ -15,6 +15,12 @@ import {throwError} from 'rxjs';
 * for how to add loading image when doing something in background.
 */
 
+const notAvailable: string = '-';
+const githubToken: string = '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';
+const githubRestURL: string = 'https://api.github.com/users/mahozad';
+const githubGraphQLURL: string = 'https://api.github.com/graphql';
+const stackoverflowRestURL: string = 'https://api.stackexchange.com/2.3/users/8583692?site=stackoverflow';
+
 @Component({
   selector: 'app-honor-list',
   templateUrl: './honor-list.component.html',
@@ -32,15 +38,15 @@ export class HonorListComponent implements OnInit {
 
   ngOnInit(): void {
     this.http
-      .get('https://api.github.com/users/mahozad')
+      .get(githubRestURL)
       .pipe(
         retry(5), // Retry a failed request up to 5 times
         catchError(err => { // Then handle the error
             return HonorListComponent.handleError(err, () => {
               this.isLoadingGHRest = false;
-              this.github.repos = '-';
-              this.github.gists = '-';
-              this.github.followers = '-';
+              this.github.repos = notAvailable;
+              this.github.gists = notAvailable;
+              this.github.followers = notAvailable;
             });
           }
         )
@@ -64,19 +70,19 @@ export class HonorListComponent implements OnInit {
             .totalContributions;
         }
       )
-      .catch(() => this.github.contributions = '-');
+      .catch(() => this.github.contributions = notAvailable);
 
     this.http
-      .get('https://api.stackexchange.com/2.3/users/8583692?site=stackoverflow')
+      .get(stackoverflowRestURL)
       .pipe(
         retry(5), // Retry a failed request up to 5 times
         catchError(err => { // Then handle the error
             return HonorListComponent.handleError(err, () => {
               this.isLoadingSO = false;
-              this.stackoverflow.reputation = '-';
-              this.stackoverflow.goldBadges = '-';
-              this.stackoverflow.silverBadges = '-';
-              this.stackoverflow.bronzeBadges = '-';
+              this.stackoverflow.reputation = notAvailable;
+              this.stackoverflow.goldBadges = notAvailable;
+              this.stackoverflow.silverBadges = notAvailable;
+              this.stackoverflow.bronzeBadges = notAvailable;
             });
           }
         )
@@ -92,12 +98,12 @@ export class HonorListComponent implements OnInit {
   }
 
   async getGitHubContributions() {
-    const headers = { Authorization: 'bearer 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' };
+    const headers = {'Authorization': `bearer ${githubToken}`};
     const body = {
       'query': 'query {viewer {contributionsCollection {contributionCalendar {totalContributions}}}}'
     };
     const response = await fetch(
-      'https://api.github.com/graphql',
+      githubGraphQLURL,
       {method: 'POST', body: JSON.stringify(body), headers: headers}
     );
     return await response.json();
@@ -109,13 +115,12 @@ export class HonorListComponent implements OnInit {
       console.error('An error occurred: ', error.error);
     } else {
       // The backend returned an unsuccessful response code.
-      console.error(
-        `Backend returned code ${error.status}, body was: `, error.error);
+      console.error(`Request returned ${error.status}; body was: `, error.error);
     }
 
     callback();
 
     // Return an observable with a user-facing error message.
-    return throwError(() => 'Could not get repository count.');
+    return throwError(() => 'Could not fetch the resource.');
   }
 }

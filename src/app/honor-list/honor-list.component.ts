@@ -3,20 +3,6 @@ import {HttpClient, HttpErrorResponse} from '@angular/common/http';
 import {catchError, retry} from 'rxjs/operators';
 import {throwError} from 'rxjs';
 
-interface Github {
-  repos: string;
-  gists: string;
-  followers: string;
-  contributions: string;
-}
-
-interface Stackoverflow {
-  reputation: string;
-  goldBadges: string;
-  silverBadges: string;
-  bronzeBadges: string;
-}
-
 /*
 * See [this post](https://stackoverflow.com/q/18262288)
 * and [this post](https://stackoverflow.com/q/44579877).

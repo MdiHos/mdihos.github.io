@@ -26,7 +26,7 @@ export class HonorListComponent implements OnInit {
         retry(5), // Retry a failed request up to 5 times
         catchError(this.handleError) // Then handle the error
       )
-      .subscribe((data: Array<any>) => {
+      .subscribe((data: any) => {
         this.repoCount = data.public_repos;
         this.gistCount = data.public_gists;
       });
@@ -37,7 +37,7 @@ export class HonorListComponent implements OnInit {
         retry(5), // Retry a failed request up to 5 times
         catchError(this.handleError) // Then handle the error
       )
-      .subscribe((data: Array<any>) => {
+      .subscribe((data: any) => {
           console.log(data);
           this.reputation = data.items[0].reputation;
           this.goldBadge = data.items[0].badge_counts.gold;

@@ -10,17 +10,19 @@ import {ProjectListComponent} from './project-list/project-list.component';
 import {FavoriteBookListComponent} from './favorite-book-list/favorite-book-list.component';
 import {RecommendedBookListComponent} from './recommended-book-list/recommended-book-list.component';
 import {AutographComponent} from './autograph/autograph.component';
+import { SpinnerComponent } from './spinner/spinner.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProfileComponent,
+    SpinnerComponent,
     HonorListComponent,
+    AutographComponent,
     ProjectListComponent,
     SocialLinkListComponent,
     FavoriteBookListComponent,
-    RecommendedBookListComponent,
-    AutographComponent
+    RecommendedBookListComponent
   ],
   imports: [
     BrowserModule,

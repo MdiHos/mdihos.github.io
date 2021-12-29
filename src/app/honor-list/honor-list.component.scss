@@ -36,8 +36,6 @@
   img { height: 12px; }
 
   .first-line {
-    span { color: hsl(114, 92%, 33%); }
-
     margin-block-start: 10px;
     margin-block-end: 3px;
   }
@@ -45,15 +43,13 @@
   .second-line{ font-size: 12px; }
 }
 
+.green {
+  color: #16a207;
+}
+
 .first-line, .second-line {
   display: flex;
   align-items: center;
-}
-
-.spinner {
-  display: inline-block;
-  content: url("/assets/img/spinner.svg");
-  height: 10px;
 }
 
 #github-info {

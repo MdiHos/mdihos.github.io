@@ -1,8 +1,8 @@
 #profile {
   display: flex;
-  width: 490px;
   background: var(--card-background-color);
-  padding: 15px 2px 15px 18px;
+  white-space: nowrap;
+  padding: 16px;
   align-items: center;
   flex-flow: row;
   border: var(--card-border-thickness) solid var(--card-border-color);
@@ -19,5 +19,35 @@
     margin-inline-end: 8px;
     border-radius: 50%;
     box-shadow: 0 1px #aaa;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #profile {
+    white-space: unset;
+    text-align: center;
+
+    #full-name {
+      font-size: 24px;
+    }
+  }
+}
+
+@media screen and (max-width: 350px) {
+  #profile {
+    #full-name {
+      font-size: 18px;
+    }
+  }
+}
+
+@media screen and (max-width: 295px) {
+  #profile {
+    flex-direction: column;
+    #full-name {
+      padding-block-end: 16px;
+      word-spacing: 100vw; // See https://stackoverflow.com/a/23889196
+      margin-block-start: 10px;
+    }
   }
 }

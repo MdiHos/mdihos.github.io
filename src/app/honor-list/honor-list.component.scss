@@ -77,3 +77,27 @@
 .bronze-badge {
   &:before { color: #cd7f32; }
 }
+
+@media screen and (max-width: 1000px) {
+  #github-stats, #stackoverflow-stats {
+    padding-inline: var(--arc-padding);
+    border-radius: var(--arc-border-radious);
+  }
+  #stackoverflow-stats {
+    flex-direction: row-reverse;
+  }
+  #stackoverflow-info {
+    align-items: end;
+  }
+  .badge {
+    margin-inline-end: 0;
+    margin-inline-start: 8px;
+  }
+}
+
+@media screen and (max-width: 300px){
+  .honor {
+    gap: 8px;
+    width: unset;
+  }
+}

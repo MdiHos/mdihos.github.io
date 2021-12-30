@@ -16,3 +16,13 @@
   margin-inline-start: 50%;
   transform: translate(-50%, 0);
 }
+
+@media screen and (max-width: 350px){
+  #header {
+    height: 50vh;
+  }
+
+  #icon {
+    display: none;
+  }
+}

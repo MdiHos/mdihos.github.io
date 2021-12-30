@@ -71,3 +71,36 @@ footer {
   position: fixed;
   inset-block-end: 0;
 }
+
+@media screen and (max-width: 1000px) {
+  main {
+    height: unset;
+  }
+  app-social-link-list {
+    width: 92%;
+  }
+  app-honor-list {
+    width: unset;
+    flex-flow: column;
+  }
+  app-project-list {
+    border-radius: 75px;
+    padding-block-end: 24px;
+  }
+  app-favorite-book-list, app-recommended-book-list {
+    display: flex;
+    position: static;
+    flex-flow: column;
+    margin-block-start: 48px;
+  }
+  app-favorite-book-list {
+    align-items: center;
+  }
+  app-recommended-book-list {
+    align-items: center;
+    margin-block-end: 48px;
+  }
+  footer {
+    position: static;
+  }
+}

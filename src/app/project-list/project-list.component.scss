@@ -57,3 +57,9 @@
   // Make the logo less prominent
   filter: opacity(80%);
 }
+
+@media screen and(max-width: 300px) {
+  .works {
+    padding-inline: 24px;
+  }
+}

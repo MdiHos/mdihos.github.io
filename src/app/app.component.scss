@@ -104,3 +104,9 @@ footer {
     position: static;
   }
 }
+
+@media screen and (max-width: 350px) {
+  app-project-list {
+    border-radius: 50px;
+  }
+}

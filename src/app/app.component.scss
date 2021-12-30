@@ -49,12 +49,12 @@ app-project-list {
 
 app-favorite-book-list, app-recommended-book-list {
   display: flex;
-  width: auto;
-  height: auto;
-  position: fixed;
-  inset-block-end: 50%;
+  overflow: hidden;
+  position: absolute;
   flex-flow: column;
-  transform: translate(0%, 50%); /* To center vertically */
+  inset-block-start: 100vh;
+  margin-block-start: 20px;
+  //transform: translateY(50%);
 }
 
 app-favorite-book-list {

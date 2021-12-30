@@ -1,0 +1,8 @@
+<svg id="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="arrow" stroke="#000" fill="none" stroke-linecap="round" stroke-width="2">
+    <path d="m8 4 4 4 4-4"/>
+  </symbol>
+  <use href="#arrow"></use>
+  <use href="#arrow" y="6"></use>
+  <use href="#arrow" y="12"></use>
+</svg>

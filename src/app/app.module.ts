@@ -11,10 +11,12 @@ import {FavoriteBookListComponent} from './favorite-book-list/favorite-book-list
 import {RecommendedBookListComponent} from './recommended-book-list/recommended-book-list.component';
 import {AutographComponent} from './autograph/autograph.component';
 import { SpinnerComponent } from './spinner/spinner.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    HeaderComponent,
     ProfileComponent,
     SpinnerComponent,
     HonorListComponent,

@@ -8,6 +8,9 @@ It is possible to deploy directly to GitHub pages with the official
 
 To build or serve the application in production mode in IntelliJ, see [this post](https://stackoverflow.com/q/51127798).
 
+To make the angular server available over local network (for example to access
+it with mobile on the same network), see [this post](https://stackoverflow.com/q/43071535).
+
 ### Fonts
 The main header uses a serif font called *Roboto Slab*.
 Rest of the site uses the san-serif font *Roboto*.

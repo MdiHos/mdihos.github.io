@@ -25,24 +25,24 @@ app-honor-list {
 app-social-link-list {
   display: flex;
   width: 96%;
-  background: #eee;
+  background: #c49e141f;
   margin-block-start: 16px;
   align-items: center;
   flex-flow: row;
   justify-content: space-around;
   padding-block: 6px;
-  border: 1px solid rgb(204, 204, 204);
+  border: 1px solid #8A6D01AF;
   border-radius: 100px;
 }
 
 app-project-list {
   display: flex;
-  background: #eee;
+  background: #c49e141f;
   margin-block-start: 16px;
   align-items: center;
   flex: 1 1 auto;
   flex-flow: column;
-  border: 1px solid rgb(204, 204, 204);
+  border: 1px solid #8A6D01AF;
   border-start-start-radius: 75px;
   border-start-end-radius: 75px;
 }

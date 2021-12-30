@@ -31,7 +31,7 @@ app-social-link-list {
   flex-flow: row;
   justify-content: space-around;
   padding-block: 6px;
-  border: 1px solid var(--card-border-color);
+  border: var(--card-border-thickness) solid var(--card-border-color);
   border-radius: 100px;
 }
 
@@ -42,7 +42,7 @@ app-project-list {
   align-items: center;
   flex: 1 1 auto;
   flex-flow: column;
-  border: 1px solid var(--card-border-color);
+  border: var(--card-border-thickness) solid var(--card-border-color);
   border-start-start-radius: 75px;
   border-start-end-radius: 75px;
 }

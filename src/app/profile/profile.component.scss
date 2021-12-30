@@ -5,7 +5,7 @@
   padding: 15px 2px 15px 18px;
   align-items: center;
   flex-flow: row;
-  border: 1px solid var(--card-border-color);
+  border: var(--card-border-thickness) solid var(--card-border-color);
   border-radius: 100px;
 
   #full-name {

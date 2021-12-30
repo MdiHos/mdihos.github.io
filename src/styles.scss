@@ -19,8 +19,10 @@
 }
 
 :root {
-  --card-background-color: #c49e141f;
-  --card-border-color: #8a6d01af;
+  --color-yellow-1: #c49e1410;
+  --color-yellow-2: #8a6d0180;
+  --card-background-color: var(--color-yellow-1);
+  --card-border-color: var(--color-yellow-2);
   --card-border-thickness: 1px;
 }
 

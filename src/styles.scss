@@ -18,6 +18,11 @@
   margin: 0;
 }
 
+:root {
+  --card-background-color: #c49e141f;
+  --card-border-color: #8A6D01AF;
+}
+
 html {
   scroll-behavior: smooth;
 }

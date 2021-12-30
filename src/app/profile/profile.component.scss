@@ -1,11 +1,11 @@
 #profile {
   display: flex;
   width: 490px;
-  background: #c49e141f;
+  background: var(--card-background-color);
   padding: 15px 2px 15px 18px;
   align-items: center;
   flex-flow: row;
-  border: 1px solid #8A6D01AF;
+  border: 1px solid var(--card-border-color);
   border-radius: 100px;
 
   #full-name {

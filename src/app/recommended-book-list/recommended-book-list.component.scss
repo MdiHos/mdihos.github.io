@@ -1,10 +1,10 @@
 .header {
   width: 160px;
-  background: #c49e141f;
+  background: var(--card-background-color);
   padding: 20px;
   margin-block-end: 10px;
   text-align: center;
-  border: 1px solid #8A6D01AF;
+  border: 1px solid var(--card-border-color);
   border-start-start-radius: 100px;
   border-end-start-radius: 100px;
 }
@@ -12,7 +12,7 @@
 .book {
   display: flex;
   height: 60px;
-  background: #c49e141f;
+  background: var(--card-background-color);
   padding-block-start: 8px;
   padding-block-end: 8px;
   padding-inline-start: 30px;

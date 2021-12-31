@@ -11,7 +11,44 @@ To build or serve the application in production mode in IntelliJ, see [this post
 To make the angular server available over local network (for example to access
 it with mobile on the same network), see [this post](https://stackoverflow.com/q/43071535).
 
+### Some useful commands
+
+```shell
+npm install -g @angular/cli
+
+ng update @angular/cli @angular/core
+ng update @angular/cli@10 @angular/core@10
+ng update
+
+# https://stackoverflow.com/a/40980411
+npm install typescript@latest --save-dev
+npm install typescript@4 --save-dev
+
+ng add apollo-angular
+```
+
+### 3D images
 The original 3d images of the "M" logo are in the [mahozad repository](https://github.com/mahozad/mahozad).
+
+To make 3d logos, we can use the following tools:
+  - Blender
+  - The online tool [vectary](https://www.vectary.com/)
+  - Adobe dimension
+    - See [this tutorial](https://youtu.be/eHWdSGm8OwQ)
+  - Adobe illustrator 2021 new 3d capabilities
+  - Inkscape
+    - Extensions -> generate from path -> motion
+    - Path -> path effects -> extrusion
+  - CSS transformations and shadows
+  - SVG [extrusion filter](https://www.smashingmagazine.com/2015/05/why-the-svg-filter-is-awesome/)
+  - The library [three js](https://github.com/mrdoob/three.js/)
+    We can create a live, interactive 3d object on the page. See [this post](https://stackoverflow.com/q/39601462).
+    - See [this tutorial](https://youtu.be/Q7AOvWpIVHU) 
+    - See [this article](https://muffinman.io/blog/three-js-extrude-svg-path/) 
+    - See [this article](https://www.freecodecamp.org/news/render-3d-objects-in-browser-drawing-a-box-with-threejs/)
+    - See [this example](https://alteredqualia.com/three/examples/webgl_text.html#D86A0A20010#Mahozad)
+  
+See [this YouTube playlist](https://youtube.com/playlist?list=PLD8AMy73ZVxXnHR_aXT8czc6SHDa0jV7F).
 
 ### Fonts
 The main header uses a serif font called *Roboto Slab*.

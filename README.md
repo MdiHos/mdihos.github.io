@@ -11,6 +11,8 @@ To build or serve the application in production mode in IntelliJ, see [this post
 To make the angular server available over local network (for example to access
 it with mobile on the same network), see [this post](https://stackoverflow.com/q/43071535).
 
+The original 3d images of the "M" logo are in the [mahozad repository](https://github.com/mahozad/mahozad).
+
 ### Fonts
 The main header uses a serif font called *Roboto Slab*.
 Rest of the site uses the san-serif font *Roboto*.

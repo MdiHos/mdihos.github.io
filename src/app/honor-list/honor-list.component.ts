@@ -79,7 +79,10 @@ export class HonorListComponent implements OnInit {
             .totalContributions;
         }
       )
-      .catch(() => this.github.contributions = notAvailable);
+      .catch(() => {
+        this.isLoadingGHGraphQL = false;
+        return this.github.contributions = notAvailable;
+      });
 
     this.http
       .get(stackoverflowRestURL)

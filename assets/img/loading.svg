@@ -1,0 +1,19 @@
+<svg id="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <circle
+    r="10"
+    cx="12"
+    cy="12"
+    fill="none"
+    stroke="#333"
+    stroke-width="3"
+    stroke-dasharray="45 20"
+    stroke-dashoffset="18">
+    <animateTransform
+      attributeName="transform"
+      type="rotate"
+      dur="1s"
+      repeatCount="indefinite"
+      from="0 12 12"
+      to="360 12 12"/>
+  </circle>
+</svg>

@@ -1,11 +1,9 @@
-<svg width="280.39" height="260" version="1.1" viewBox="0 0 279.64 260" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg viewBox="0 0 279.64 260" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="linearGradient33" x1="252.98" x2="252.98" y1="323.51" y2="63.505" gradientUnits="userSpaceOnUse">
+    <linearGradient id="gradient" x1="252.98" x2="252.98" y1="323.51" y2="63.505" gradientUnits="userSpaceOnUse">
       <stop stop-color="#ffa00f" offset="0"/>
       <stop stop-color="#ffbe0f" offset="1"/>
     </linearGradient>
   </defs>
-  <g transform="translate(-113.16 -63.505)">
-    <path d="m377.99 213.5c-6.3913 2.885-20.753 8.8719-30 25-20 35-25 70 5 70 30 0 25-35 5-70l-60-90c-20-35-25-70 5-70s25 35 5 70l-60 90c-20 35-25 70 5 70m-125-95c6.3913 2.885 20.753 8.8719 30 25 20 35 25 70-5 70-30 0-25-35-5-70l60-90c20-35 25-70-5-70s-25 35-5 70l60 90c20 35 25 70-5 70" fill="none" stroke="url(#linearGradient33)" stroke-linecap="round" stroke-width="30"/>
-  </g>
+  <path fill="none" stroke="url(#gradient)" stroke-linecap="round" stroke-width="30" d="m264.83 150c-6.391 2.885-20.753 8.872-30 25-20 35-25 70 5 70s25-35 5-70l-60-90c-20-35-25-70 5-70s25 35 5 70l-60 90c-20 35-25 70 5 70m-125-95c6.3913 2.885 20.753 8.872 30 25 20 35 25 70-5 70s-25-35-5-70l60-90c20-35 25-70-5-70s-25 35-5 70l60 90c20 35 25 70-5 70"/>
 </svg>

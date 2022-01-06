@@ -1,6 +1,7 @@
 #info {
   position: absolute;
-  background: url("/assets/img/info.svg") no-repeat 50% 8px;
+  background: var(--card-background-color) url("/assets/img/info.svg") no-repeat 50% 8px;
+  color: #8a6d01;
   inset-block-start: 8px;
   inset-inline-start: 8px;
   border-radius: 50%;

@@ -1,25 +1,28 @@
 <a id="stackoverflow-stats" class="honor" href="https://stackoverflow.com/users/8583692/mahozad">
   <div id="stackoverflow-info">
     <img src="/assets/img/stackoverflow-logo.svg" alt="Stackoverflow logo">
-    <p class="first-line">
+    <div class="first-line">
       <span class="title">Reputation:&nbsp;</span>
-      <spinner *ngIf="isLoadingGHRest"></spinner>
+      <img class="loading-icon" *ngIf="isLoadingSO" src="/assets/img/loading.svg" alt="Loading...">
       <span class="green">{{stackoverflow.reputation}}</span>
-    </p>
-    <p class="second-line">
-      <span class="badge gold-badge">
-        <spinner *ngIf="isLoadingGHRest"></spinner>
+    </div>
+    <div class="second-line">
+      <div class="badge">
+        <svg viewBox="0 0 24 24" class="badge-icon gold-badge"><use href="/assets/img/circle.svg#icon"/></svg>
+        <img class="loading-icon" *ngIf="isLoadingSO" src="/assets/img/loading.svg" alt="Loading...">
         <span>{{stackoverflow.goldBadges}}</span>
-      </span>
-      <span class="badge silver-badge">
-        <spinner *ngIf="isLoadingGHRest"></spinner>
+      </div>
+      <div class="badge">
+        <svg viewBox="0 0 24 24" class="badge-icon silver-badge"><use href="/assets/img/circle.svg#icon"/></svg>
+        <img class="loading-icon" *ngIf="isLoadingSO" src="/assets/img/loading.svg" alt="Loading...">
         <span>{{stackoverflow.silverBadges}}</span>
-      </span>
-      <span class="badge bronze-badge">
-        <spinner *ngIf="isLoadingGHRest"></spinner>
+      </div>
+      <div class="badge">
+        <svg viewBox="0 0 24 24" class="badge-icon bronze-badge"><use href="/assets/img/circle.svg#icon"/></svg>
+        <img class="loading-icon" *ngIf="isLoadingSO" src="/assets/img/loading.svg" alt="Loading...">
         <span>{{stackoverflow.bronzeBadges}}</span>
-      </span>
-    </p>
+      </div>
+    </div>
   </div>
   <img id="stackoverflow-mark" src="/assets/img/stackoverflow-mark.svg" alt="Stackoverflow mark">
 </a>
@@ -28,14 +31,15 @@
   <img id="github-mark" src="/assets/img/github-mark.svg" alt="GitHub mark">
   <div id="github-info">
     <img src="/assets/img/github-logo.svg" alt="GitHub logo">
-    <p class="first-line">
+    <div class="first-line">
       <span>Contributions:&nbsp;</span>
-      <spinner *ngIf="isLoadingGHGraphQL"></spinner>
-      <span class="green">{{github.contributions}}</span></p>
-    <p class="second-line">
+      <img class="loading-icon" *ngIf="isLoadingGHGraphQL" src="/assets/img/loading.svg" alt="Loading...">
+      <span class="green">{{github.contributions}}</span>
+    </div>
+    <div class="second-line">
       <span>Repositories:&nbsp;</span>
-      <spinner *ngIf="isLoadingGHRest"></spinner>
+      <img class="loading-icon" *ngIf="isLoadingGHRest" src="/assets/img/loading.svg" alt="Loading...">
       <span>{{github.repos}}</span>
-    </p>
+    </div>
   </div>
 </a>

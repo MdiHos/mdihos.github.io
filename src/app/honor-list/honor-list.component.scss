@@ -56,30 +56,40 @@
   align-items: start;
 }
 
+.first-line, .second-line {
+  display: flex;
+  align-items: center;
+}
+
 .badge {
-  display: inline-block;
+  display: flex;
+  align-items: center;
   margin-inline-end: 10px;
 
-  &:before {
-    content: " ⬤ ";
-    font-size: 10px;
-  }
+  &:last-of-type { margin-inline-end: 0; }
 
-  &:last-of-type {
-    margin-inline-end: 0;
+  .badge-icon {
+    width: 10px;
+    height: 10px;
+    margin-inline-end: 2px;
   }
+}
+
+.loading-icon {
+  width: 10px;
+  height: 10px;
 }
 
 .gold-badge {
-  &:before { color: #ffd700; }
+  fill: #ffd700;
 }
 
 .silver-badge {
-  &:before { color: #c0c0c0; }
+  fill: #c0c0c0;
 }
 
 .bronze-badge {
-  &:before { color: #cd7f32; }
+  fill: #cd7f32;
 }
 
 @media screen and (max-width: 1000px) {

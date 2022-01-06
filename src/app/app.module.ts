@@ -9,7 +9,6 @@ import {SocialLinkListComponent} from './social-link-list/social-link-list.compo
 import {ProjectListComponent} from './project-list/project-list.component';
 import {FavoriteBookListComponent} from './favorite-book-list/favorite-book-list.component';
 import {RecommendedBookListComponent} from './recommended-book-list/recommended-book-list.component';
-import {AutographComponent} from './autograph/autograph.component';
 import { HeaderComponent } from './header/header.component';
 
 @NgModule({
@@ -18,7 +17,6 @@ import { HeaderComponent } from './header/header.component';
     HeaderComponent,
     ProfileComponent,
     HonorListComponent,
-    AutographComponent,
     ProjectListComponent,
     SocialLinkListComponent,
     FavoriteBookListComponent,

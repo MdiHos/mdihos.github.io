@@ -1,3 +1,40 @@
+#info {
+  position: absolute;
+  background-image: url("/assets/img/info.svg");
+  background-repeat: no-repeat;
+  background-position-x: 50%;
+  background-position-y: 8px;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  margin-block-start: 8px;
+  margin-inline-start: 8px;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  border: var(--card-border-thickness) solid var(--card-border-color);
+  padding: 8px;
+  transition: 300ms;
+  font-size: 12px;
+  overflow: hidden;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-user-select: none;
+
+  &:active {
+    width: 130px;
+    height: 110px;
+    border-radius: 14%;
+  }
+
+  div {
+    margin-block-start: 8px;
+  }
+
+  div:first-of-type {
+    margin-block-start: 36px;
+  }
+}
+
 main {
   display: flex;
   width: min-content;
@@ -71,6 +108,12 @@ footer {
 }
 
 @media screen and (max-width: 1000px) {
+  #info:hover, #info:active {
+    width: 110px;
+    height: 94px;
+    border-radius: 14%;
+    font-size: 10px;
+  }
   main {
     height: unset;
   }

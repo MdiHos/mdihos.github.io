@@ -75,7 +75,7 @@ footer {
     height: unset;
   }
   app-social-link-list {
-    width: 92%;
+    width: 294px;
   }
   app-honor-list {
     width: unset;
@@ -107,5 +107,11 @@ footer {
 @media screen and (max-width: 350px) {
   app-project-list {
     border-radius: 50px;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  app-social-link-list {
+    width: 172px;
   }
 }

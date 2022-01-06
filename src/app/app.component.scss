@@ -16,7 +16,6 @@ app-honor-list {
   display: flex;
   margin-block-start: 16px;
   width: 96%;
-  align-items: center;
   flex-flow: row;
   justify-content: center;
   gap: 16px;
@@ -81,6 +80,7 @@ footer {
   app-honor-list {
     width: unset;
     flex-flow: column;
+    align-items: center;
   }
   app-project-list {
     border-radius: 75px;

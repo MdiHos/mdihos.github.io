@@ -66,9 +66,19 @@
   .book {
     transform: unset;
     border-radius: 100px;
+    flex-flow: row-reverse;
+    padding-inline-start: 30px;
 
     img {
       margin-inline-start: 4px;
+    }
+
+    .name {
+      text-align: start;
+    }
+
+    .author {
+      text-align: start;
     }
   }
 }

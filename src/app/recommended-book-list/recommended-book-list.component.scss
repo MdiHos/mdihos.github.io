@@ -37,6 +37,7 @@
     margin-inline-end: 20px;
     border-radius: 4px;
     object-fit: contain;
+    transition: 300ms; // For its margin from the title
   }
 
   .author {
@@ -49,6 +50,10 @@
 
   &:hover {
     transform: translateX(0px);
+
+    img {
+      margin-inline-end: 4px;
+    }
   }
 }
 

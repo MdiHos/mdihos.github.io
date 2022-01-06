@@ -24,7 +24,7 @@ import {throwError} from 'rxjs';
 * and [this post](https://stackoverflow.com/q/21939713).
 */
 
-const notAvailable: string = '-';
+const notAvailable: string = 'N/A';
 const githubNekot: string = '0Q_EWC_0Vy_S1pVgxT_ClT_GFY_Ssz83_Cid_izXtbXk_phg';
 const githubRestURL: string = 'https://api.github.com/users/mahozad';
 const githubGraphQLURL: string = 'https://api.github.com/graphql';

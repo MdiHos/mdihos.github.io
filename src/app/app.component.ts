@@ -104,11 +104,8 @@ export class AppComponent implements OnInit {
     texture.repeat.x = 10;
     texture.repeat.y = 6;
 
-    const envMapLoader = new THREE.PMREMGenerator(renderer);
-
     // const ambientLight = new THREE.AmbientLight(0xcccccc, 0.9);
     // scene.add(ambientLight);
-
 
     new RGBELoader()
       .setPath('assets/')
@@ -120,6 +117,7 @@ export class AppComponent implements OnInit {
         const loader = new GLTFLoader();
         loader.load('assets/3d-logo.glb', gltf => {
           const model = gltf.scene;
+          // const envMapLoader = new THREE.PMREMGenerator(renderer);
           // const environmentMap = envMapLoader.fromCubemap(hdr);
           // const material = new THREE.MeshPhysicalMaterial/* OR MeshStandardMaterial */({
           //   color: 0xfcd05d,

@@ -69,6 +69,7 @@ export class AppComponent implements OnInit {
    * and https://docs.minsar.app/create/howtos/gltf-blender-280/
    * and https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/DamagedHelmet
    * for the code of this: https://sketchfab.com/3d-models/battle-damaged-sci-fi-helmet-pbr-b81008d513954189a063ff901f7abfe4
+   * (Its files are also available [here](https://github.com/mrdoob/three.js/tree/dev/examples/models/gltf/DamagedHelmet/glTF)).
    *
    * The HDR environment was downloaded from https://github.com/mrdoob/three.js/tree/master/examples/textures/equirectangular
    * which was used for the example link above (https://github.com/mrdoob/three.js/blob/master/examples/webgl_loader_gltf.html).

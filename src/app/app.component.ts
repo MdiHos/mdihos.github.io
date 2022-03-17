@@ -56,6 +56,14 @@ export class AppComponent implements OnInit {
    * and https://stackoverflow.com/a/56674907/8583692
    * and https://blender.stackexchange.com/a/202526
    * and https://discoverthreejs.com/book/first-steps/textures-intro/
+   * and https://youtu.be/qizLBCA_BCI
+   * and https://discourse.threejs.org/t/solved-how-to-play-a-gltf-animation-once-when-mouse-is-clicked/4650/3
+   * and https://threejs.org/docs/#api/en/animation/AnimationAction
+   * and https://stackoverflow.com/q/14567712/8583692
+   * and https://discourse.threejs.org/t/how-to-animate-blender-camera-in-three-js/29085
+   * and https://blender.stackexchange.com/q/234796
+   *
+   * Note that the original blender 3D file is available in [mahozad repository](https://github.com/mahozad/mahozad/tree/master/3d-renders/blender).
    *
    * See https://github.com/mrdoob/three.js/blob/master/examples/webgl_loader_gltf.html
    * and https://docs.minsar.app/create/howtos/gltf-blender-280/
@@ -70,6 +78,7 @@ export class AppComponent implements OnInit {
    *
    * In Blender, to make the camera follow an object and animate along a path
    * see https://youtu.be/LeYUk3Ob5W8
+   *
    * @private
    */
   private setup3dLogo() {

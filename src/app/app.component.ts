@@ -83,6 +83,7 @@ export class AppComponent implements OnInit {
    * @private
    */
   private setup3dLogo() {
+    let camera;
     const scene = new THREE.Scene();
     const canvas = document.getElementById("canvas");
     const renderer = new THREE.WebGLRenderer({
@@ -134,7 +135,7 @@ export class AppComponent implements OnInit {
           //  /* if (object.isMesh) */ object.material = material;
           // });
           scene.add(model);
-          const camera = gltf.cameras[0];
+          camera = gltf.cameras[0];
           const mixer = new THREE.AnimationMixer(gltf.scene);
           // const mixer = new THREE.AnimationMixer(camera);
           const animation = mixer.clipAction(gltf.animations[0]);
@@ -146,6 +147,13 @@ export class AppComponent implements OnInit {
           alert(error);
         });
       });
+
+    // FIXME: The canvas is not resized when the windows is resized
+    window.addEventListener('resize', () => {
+      renderer.setSize(canvas.clientWidth, canvas.clientHeight);
+      camera.aspect = canvas.clientWidth / canvas.clientHeight;
+      camera?.updateProjectionMatrix();
+    });
   }
 
   private animate(renderer, scene, camera, mixer) {

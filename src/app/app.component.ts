@@ -124,11 +124,18 @@ export class AppComponent implements OnInit {
           // });
           scene.add(model);
           const camera = gltf.cameras[0];
-          renderer.render(scene, camera);
+          this.animate(renderer, scene, camera);
         }, () => {}, undefined, error => {
           alert(error);
         });
       });
+  }
+
+  private animate(renderer, scene, camera) {
+    camera.position.y -= 0.008;
+    camera.position.z -= 0.0001;
+    requestAnimationFrame(() => this.animate(renderer, scene, camera));
+    renderer.render(scene, camera);
   }
 
   /*

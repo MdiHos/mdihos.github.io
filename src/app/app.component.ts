@@ -25,6 +25,7 @@ export class AppComponent implements OnInit {
   title = 'mahozad-angular';
   isLoadingGHRest = true;
   lastUpdate = '';
+  clock = new THREE.Clock();
 
   constructor(private http: HttpClient) {}
 
@@ -67,6 +68,8 @@ export class AppComponent implements OnInit {
    *
    * An alternative for three.js could be [Babylon.js](https://github.com/BabylonJS/Babylon.js).
    *
+   * In Blender, to make the camera follow an object and animate along a path
+   * see https://youtu.be/LeYUk3Ob5W8
    * @private
    */
   private setup3dLogo() {
@@ -124,18 +127,25 @@ export class AppComponent implements OnInit {
           // });
           scene.add(model);
           const camera = gltf.cameras[0];
-          this.animate(renderer, scene, camera);
+          const mixer = new THREE.AnimationMixer(gltf.scene);
+          // const mixer = new THREE.AnimationMixer(camera);
+          const animation = mixer.clipAction(gltf.animations[0]);
+          animation.setLoop(THREE.LoopPingPong);
+          animation.play();
+          this.animate(renderer, scene, camera, mixer);
         }, () => {}, undefined, error => {
           alert(error);
         });
       });
   }
 
-  private animate(renderer, scene, camera) {
-    camera.position.y -= 0.008;
-    camera.position.z -= 0.0001;
-    requestAnimationFrame(() => this.animate(renderer, scene, camera));
+  private animate(renderer, scene, camera, mixer) {
+    requestAnimationFrame(() => this.animate(renderer, scene, camera, mixer));
+    const delta = this.clock.getDelta();
+    mixer?.update(delta);
     renderer.render(scene, camera);
+    camera.lookAt(0.0, 0.0, 0.6);
+    // camera.updateProjectionMatrix()
   }
 
   /*

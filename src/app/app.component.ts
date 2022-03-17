@@ -112,7 +112,7 @@ export class AppComponent implements OnInit {
         loader.load('assets/3d-logo.glb', gltf => {
           const model = gltf.scene;
           // const environmentMap = envMapLoader.fromCubemap(hdr);
-          // const material = new THREE.MeshPhysicalMaterial({
+          // const material = new THREE.MeshPhysicalMaterial/* OR MeshStandardMaterial */({
           //   color: 0xfcd05d,
           //   roughness: 0.2,
           //   metalness: 0.8,

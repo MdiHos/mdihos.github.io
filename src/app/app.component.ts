@@ -110,14 +110,16 @@ export class AppComponent implements OnInit {
     // scene.add(ambientLight);
 
     new RGBELoader()
-      .setPath('assets/')
+      .setPath('assets/3d-logo/hdr/')
       .load('photo_studio_01_1k.hdr', hdr => {
         hdr.mapping = THREE.EquirectangularReflectionMapping;
         scene.environment = hdr;
         // scene.background = hdr; // Show the environment as background as well
 
         const loader = new GLTFLoader();
-        loader.load('assets/3d-logo.glb', gltf => {
+        loader
+          .setPath('assets/3d-logo/')
+          .load('logo.glb', gltf => {
           const model = gltf.scene;
           // const envMapLoader = new THREE.PMREMGenerator(renderer);
           // const environmentMap = envMapLoader.fromCubemap(hdr);

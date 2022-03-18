@@ -142,7 +142,7 @@ export class AppComponent implements OnInit {
           // const mixer = new THREE.AnimationMixer(camera);
           const animation = mixer.clipAction(gltf.animations[0]);
           animation.setLoop(THREE.LoopPingPong);
-          animation.timeScale = 1 / 10;
+          animation.timeScale = 1 / 5;
           animation.play();
           this.animate(renderer, scene, camera, mixer);
         }, () => {}, undefined, error => {

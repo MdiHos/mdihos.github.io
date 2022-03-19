@@ -34,6 +34,12 @@ export class HeaderComponent implements OnInit {
    *
    * Note that the original blender 3D file is available in [mahozad repository](https://github.com/mahozad/mahozad/tree/master/3d-renders/blender).
    *
+   * To create a photorealistic material in three.js see https://www.youtube.com/watch?v=aJun0Q0CG_A
+   *
+   * To animate the alpha see
+   * https://discourse.threejs.org/t/how-to-animate-alpha-in-blender-and-export-gltf-to-three-js/5428
+   * and https://stackoverflow.com/q/28023237 and https://stackoverflow.com/q/19405394
+   *
    * See https://github.com/mrdoob/three.js/blob/master/examples/webgl_loader_gltf.html
    * and https://docs.minsar.app/create/howtos/gltf-blender-280/
    * and https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/DamagedHelmet
@@ -110,7 +116,7 @@ export class HeaderComponent implements OnInit {
             model.traverse(object => {
               if (object.isMesh) {
                 logo = object;
-                // object.castShadow = true;
+                // object.castShadow = true; // See https://stackoverflow.com/q/49869345
                 object.material.transparent = true;
               }
             });

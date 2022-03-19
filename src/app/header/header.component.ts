@@ -105,6 +105,16 @@ export class HeaderComponent implements OnInit {
             // model.traverse(object => {
             //  /* if (object.isMesh) */ object.material = material;
             // });
+
+            let logo;
+            model.traverse(object => {
+              if (object.isMesh) {
+                logo = object;
+                // object.castShadow = true;
+                object.material.transparent = true;
+              }
+            });
+
             scene.add(model);
             camera = gltf.cameras[0];
             const mixer = new THREE.AnimationMixer(gltf.scene);
@@ -116,7 +126,7 @@ export class HeaderComponent implements OnInit {
 
             this.showStatic3dLogo = false;
 
-            this.animate(renderer, scene, camera, mixer);
+            this.animate(renderer, scene, camera, mixer, logo);
           }, () => {}, undefined, error => {
             alert(error);
           });
@@ -130,10 +140,11 @@ export class HeaderComponent implements OnInit {
     });
   }
 
-  private animate(renderer, scene, camera, mixer) {
-    requestAnimationFrame(() => this.animate(renderer, scene, camera, mixer));
+  private animate(renderer, scene, camera, mixer, logo) {
+    requestAnimationFrame(() => this.animate(renderer, scene, camera, mixer, logo));
     const delta = this.clock.getDelta();
     mixer?.update(delta);
+    // logo.material.opacity -= 0.001;
     renderer.render(scene, camera);
     camera.lookAt(0.0, 0.0, 0.6);
     // camera.updateProjectionMatrix()

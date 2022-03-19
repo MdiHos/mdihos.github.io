@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {GLTFLoader} from 'three/examples/jsm/loaders/GLTFLoader.js';
-import {RGBELoader} from 'three/examples/jsm/loaders/RGBELoader.js';
+import {EXRLoader} from 'three/examples/jsm/loaders/EXRLoader.js';
 import {FlakesTexture} from 'three/examples/jsm/textures/FlakesTexture.js';
 import * as THREE from 'three';
 
@@ -84,9 +84,9 @@ export class HeaderComponent implements OnInit {
     // const ambientLight = new THREE.AmbientLight(0xcccccc, 0.9);
     // scene.add(ambientLight);
 
-    new RGBELoader()
-      .setPath('assets/3d-logo/hdr/')
-      .load('photo_studio_01_1k.hdr', hdr => {
+    new EXRLoader() // Use RGBELoader for .hdr files
+      .setPath('assets/3d-logo/environments/')
+      .load('forest.exr', hdr => {
         hdr.mapping = THREE.EquirectangularReflectionMapping;
         scene.environment = hdr;
         // scene.background = hdr; // Show the environment as background as well
@@ -127,7 +127,7 @@ export class HeaderComponent implements OnInit {
             // const mixer = new THREE.AnimationMixer(camera);
             const animation = mixer.clipAction(gltf.animations[0]);
             animation.setLoop(THREE.LoopPingPong);
-            animation.timeScale = 1 / 5;
+            animation.timeScale = 1 / 3;
             animation.play();
 
             this.showStatic3dLogo = false;

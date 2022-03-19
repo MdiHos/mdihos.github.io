@@ -73,6 +73,7 @@ export class HeaderComponent implements OnInit {
     renderer.outputEncoding = THREE.sRGBEncoding;
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
     renderer.toneMappingExposure = 1.2;
+    // renderer.shadowMap.enabled = true;
     renderer.setPixelRatio(window.devicePixelRatio);
 
     const texture = new THREE.CanvasTexture(new FlakesTexture());
@@ -83,6 +84,15 @@ export class HeaderComponent implements OnInit {
 
     // const ambientLight = new THREE.AmbientLight(0xcccccc, 0.9);
     // scene.add(ambientLight);
+
+    // const planeGeometry = new THREE.PlaneGeometry(100, 100);
+    // // const planeGeometry = new THREE.PlaneBufferGeometry(2000, 2000, 8, 8);
+    // const planeMaterial = new THREE.ShadowMaterial();
+    // planeMaterial.opacity = 0.5;
+    // const plane = new THREE.Mesh(planeGeometry, planeMaterial);
+    // plane.receiveShadow = true;
+    // plane.rotateX(-Math.PI / 2);
+    // scene.add(plane);
 
     new EXRLoader() // Use RGBELoader for .hdr files
       .setPath('assets/3d-logo/environments/')

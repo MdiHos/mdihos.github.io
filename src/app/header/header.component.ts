@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {GLTFLoader} from 'three/examples/jsm/loaders/GLTFLoader.js';
 import {EXRLoader} from 'three/examples/jsm/loaders/EXRLoader.js';
+import {DRACOLoader} from 'three/examples/jsm/loaders/DRACOLoader.js';
 import {FlakesTexture} from 'three/examples/jsm/textures/FlakesTexture.js';
 import * as THREE from 'three';
 
@@ -104,9 +105,13 @@ export class HeaderComponent implements OnInit {
         scene.environment = hdr;
         // scene.background = hdr; // Show the environment as background as well
 
-        const loader = new GLTFLoader();
-        loader
+        const dracoLoader = new DRACOLoader(); // To uncompress the gltf if it is compressed
+        // Grab the latest version of draco_wasm_wrapper.js and draco_decoder.wasm from
+        // <project-path>\node_modules\three\examples\js\libs\draco\ and place them in below dir
+        dracoLoader.setDecoderPath( 'assets/3d-logo/draco/' );
+        new GLTFLoader()
           .setPath('assets/3d-logo/')
+          .setDRACOLoader(dracoLoader)
           .load('logo.glb', gltf => {
             const model = gltf.scene;
             // const envMapLoader = new THREE.PMREMGenerator(renderer);
@@ -140,7 +145,7 @@ export class HeaderComponent implements OnInit {
             // const mixer = new THREE.AnimationMixer(camera);
             const animation = mixer.clipAction(gltf.animations[0]);
             animation.setLoop(THREE.LoopPingPong);
-            animation.timeScale = 1 / 5;
+            animation.timeScale = 1 / 3;
             animation.play();
 
             this.showStatic3dLogo = false;

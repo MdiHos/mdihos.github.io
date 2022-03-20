@@ -71,9 +71,10 @@ export class HeaderComponent implements OnInit {
     renderer.setSize(canvas.clientWidth, canvas.clientHeight);
     renderer.physicallyCorrectLights = true;
     renderer.outputEncoding = THREE.sRGBEncoding;
-    renderer.toneMapping = THREE.ACESFilmicToneMapping;
-    renderer.toneMappingExposure = 1.2;
-    // renderer.shadowMap.enabled = true;
+    renderer.toneMapping = THREE.CineonToneMapping; // OR THREE.ACESFilmicToneMapping
+    renderer.toneMappingExposure = 2.5;
+    // renderer.gammaFactor = 0;
+    // renderer.shadowMap.enabled = true; // Enable shadows globally
     renderer.setPixelRatio(window.devicePixelRatio);
 
     const texture = new THREE.CanvasTexture(new FlakesTexture());
@@ -96,7 +97,9 @@ export class HeaderComponent implements OnInit {
 
     new EXRLoader() // Use RGBELoader for .hdr files
       .setPath('assets/3d-logo/environments/')
-      .load('forest.exr', hdr => {
+      // If the lighting of the object is not decent, change
+      // toneMapping and toneMappingExposure of the renderer above
+      .load('studio.exr', hdr => {
         hdr.mapping = THREE.EquirectangularReflectionMapping;
         scene.environment = hdr;
         // scene.background = hdr; // Show the environment as background as well
@@ -137,7 +140,7 @@ export class HeaderComponent implements OnInit {
             // const mixer = new THREE.AnimationMixer(camera);
             const animation = mixer.clipAction(gltf.animations[0]);
             animation.setLoop(THREE.LoopPingPong);
-            animation.timeScale = 1 / 3;
+            animation.timeScale = 1 / 5;
             animation.play();
 
             this.showStatic3dLogo = false;

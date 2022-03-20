@@ -22,3 +22,16 @@ See [How to bake metalic maps in Blender](https://youtu.be/aaRspfc9OBU)
 See [Why the bake color is black](https://blender.stackexchange.com/q/95782)
 See this not so much related video about [shadow catchers](https://youtu.be/GIGKit1e3u8)
 See https://blender.stackexchange.com/q/95782
+
+To edit curves and paths, select the path or curve and then go to edit mode by pressing Tab (or selecting edit mode from top-left corner)
+To extend (add node) to a bezier curve select the curve or one of its nodes by dragging over it and press E.
+To grab and move a node or a node handle, drag over it and press G.
+To move the view, hold shift and drag the mouse middle button.
+To connect two nodes together (fill), select both of them and press F or press Alt + C (close).
+To set the exact position of a node, select it and then near the gizmo and the right toolbar drag the small arrow to the left to open the "Item" menu which contains the coordinates.
+
+We can simply animate position of the camera with no problem. However, to animate the camera along a path and then export the animation to gltf, see below links.
+To animate the camera along a path see https://blender.stackexchange.com/a/46898
+To export camera animation along a path see https://youtu.be/omAoKWyG_J4
+
+If the object lighting in three.js is not good, try to change the toneMapping and toneMappingExposure of the three.js renderer.

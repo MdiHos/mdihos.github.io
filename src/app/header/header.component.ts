@@ -68,8 +68,6 @@ export class HeaderComponent implements OnInit {
       antialias: true,
       gammaOutput: true
     });
-    // renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setSize(canvas.clientWidth, canvas.clientHeight);
     renderer.physicallyCorrectLights = true;
     renderer.outputEncoding = THREE.sRGBEncoding;
     renderer.toneMapping = THREE.CineonToneMapping; // OR THREE.ACESFilmicToneMapping
@@ -141,6 +139,11 @@ export class HeaderComponent implements OnInit {
 
             scene.add(model);
             camera = gltf.cameras[0];
+            const sizes = document.getElementsByTagName("app-header")[0].getBoundingClientRect();
+            camera.aspect = sizes.width / sizes.height;
+            camera?.updateProjectionMatrix();
+            renderer.setSize(sizes.width, sizes.height);
+
             const mixer = new THREE.AnimationMixer(gltf.scene);
             // const mixer = new THREE.AnimationMixer(camera);
             const animation = mixer.clipAction(gltf.animations[0]);
@@ -158,9 +161,12 @@ export class HeaderComponent implements OnInit {
 
     // FIXME: The canvas is not resized when the windows is resized
     window.addEventListener('resize', () => {
-      renderer.setSize(canvas.clientWidth, canvas.clientHeight);
-      camera.aspect = canvas.clientWidth / canvas.clientHeight;
+      const sizes = document.getElementsByTagName("app-header")[0].getBoundingClientRect();
+      if (camera) camera.aspect = sizes.width / sizes.height;
       camera?.updateProjectionMatrix();
+
+      // Call this after updating the camera to prevent animation jitter
+      renderer?.setSize(sizes.width, sizes.height);
     });
   }
 

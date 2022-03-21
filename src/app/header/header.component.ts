@@ -77,20 +77,21 @@ export class HeaderComponent implements OnInit {
     this.renderer.toneMappingExposure = 2.5;
     this.renderer.setPixelRatio(window.devicePixelRatio);
     this.renderer.shadowMap.enabled = true; // Enable shadows globally
-    this.renderer.shadowMap.type = THREE.BasicShadowMap;
+    // this.renderer.shadowMap.type = THREE.BasicShadowMap; // Does not support shadow radius (softening)
     // this.renderer.gammaFactor = 0;
 
     // const ambientLight = new THREE.AmbientLight(0xcccccc, 0.9);
     // scene.add(ambientLight);
 
     // Set the intensity to 0 so the logo appearance is not effected
-    const light = new THREE.DirectionalLight(0xffffff, 0.7);
+    const light = new THREE.DirectionalLight(0xffffff, 0.8);
     light.castShadow = true;
+    light.shadow.radius = 10; // Soften the shadow
     light.position.set(1, 4, 5);
     this.scene.add(light);
     const planeGeometry = new THREE.PlaneGeometry(20, 20);
     const planeMaterial = new THREE.ShadowMaterial(); // To see the plane THREE.MeshStandardMaterial()
-    planeMaterial.opacity = 0.05;
+    planeMaterial.opacity = 0.15;
     const plane = new THREE.Mesh(planeGeometry, planeMaterial);
     plane.receiveShadow = true;
     plane.rotateX(-Math.PI / 2);

@@ -157,7 +157,8 @@ export class HeaderComponent implements OnInit {
           });
       });
 
-    window.addEventListener('resize', this.resize);
+    // See https://stackoverflow.com/q/64202917
+    window.addEventListener('resize', this.resize.bind(this))
   }
 
   private resize() {

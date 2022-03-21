@@ -36,3 +36,9 @@ To export camera animation along a path see https://youtu.be/omAoKWyG_J4
 (set the keyframes as close as possible so that when the animation is converted it takes less size. Bit it seems to make camera movement not so smooth. We can then set the animation speed in three.js however we want)
 
 If the object lighting in three.js is not good, try to change the toneMapping and/or tweak toneMappingExposure of the three.js renderer.
+
+
+## Environments
+Some environment files were taken from Blender.
+
+They are available in <blender-install-path>\datafiles\studiolights\world\

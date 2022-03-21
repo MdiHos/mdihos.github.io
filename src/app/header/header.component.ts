@@ -78,13 +78,6 @@ export class HeaderComponent implements OnInit {
     this.renderer.setPixelRatio(window.devicePixelRatio);
     this.renderer.shadowMap.enabled = true; // Enable shadows globally
     // this.renderer.gammaFactor = 0;
-    // this.renderer.shadowMap.enabled = true; // Enable shadows globally
-
-    // const texture = new THREE.CanvasTexture(new FlakesTexture());
-    // texture.wrapS = THREE.RepeatWrapping;
-    // texture.wrapT = THREE.RepeatWrapping;
-    // texture.repeat.x = 10;
-    // texture.repeat.y = 6;
 
     // const ambientLight = new THREE.AmbientLight(0xcccccc, 0.9);
     // scene.add(ambientLight);
@@ -94,8 +87,7 @@ export class HeaderComponent implements OnInit {
     dirLight.position.set(0, 4, 5);
     this.scene.add(dirLight);
     const planeGeometry = new THREE.PlaneGeometry(20, 20);
-    const planeMaterial = new THREE.ShadowMaterial();
-    // const planeMaterial = new THREE.MeshStandardMaterial();
+    const planeMaterial = new THREE.ShadowMaterial(); // OR THREE.MeshStandardMaterial()
     planeMaterial.opacity = 0.1;
     const plane = new THREE.Mesh(planeGeometry, planeMaterial);
     plane.castShadow = true;

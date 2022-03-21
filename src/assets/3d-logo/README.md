@@ -30,10 +30,10 @@ To move the view, hold shift and drag the mouse middle button.
 To connect two nodes together (fill), select both of them and press F or press Alt + C (close).
 To set the exact position of a node, select it and then near the gizmo and the right toolbar drag the small arrow to the left to open the "Item" menu which contains the coordinates.
 
-We can simply animate position of the camera manually with no problem. However, to animate the camera along a path and then export the animation to gltf, see below links.
+We can simply animate position of the camera manually with no problem. However, to animate the camera along a path and then export the animation (bake) to gltf, see below links.
 To animate the camera along a path see https://blender.stackexchange.com/a/46898
 To export camera animation along a path see https://youtu.be/omAoKWyG_J4
-(set the keyframes as close as possible so that when the animation is converted it takes less size. Bit it seems to make camera movement not so smooth. We can then set the animation speed in three.js however we want)
+(set the keyframes as close as possible so that when the animation is converted it takes less size. Bit it seems to make camera movement not so smooth. We can then set the animation speed in three.js however we want). Also, baking seems to have the advantage that it does not require `camera.lookAt(...)` to be set in every frame of Three.js animation.
 
 If the object lighting in three.js is not good, try to change the toneMapping and/or tweak toneMappingExposure of the three.js renderer.
 

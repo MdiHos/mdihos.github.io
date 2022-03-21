@@ -14,6 +14,10 @@ export class HeaderComponent implements OnInit {
 
   clock = new THREE.Clock();
   showStatic3dLogo: boolean = true;
+  container: Element;
+  renderer: THREE.WebGLRenderer;
+  scene = new THREE.Scene();
+  camera;
 
   constructor() { }
 
@@ -59,28 +63,27 @@ export class HeaderComponent implements OnInit {
    * @private
    */
   private setup3dLogo() {
-    let camera;
-    const scene = new THREE.Scene();
     const canvas = document.getElementById("canvas");
-    const renderer = new THREE.WebGLRenderer({
+    this.container = document.querySelector("app-header");
+    this.renderer = new THREE.WebGLRenderer({
       canvas: canvas,
       alpha: true,
       antialias: true,
       gammaOutput: true
     });
-    renderer.physicallyCorrectLights = true;
-    renderer.outputEncoding = THREE.sRGBEncoding;
-    renderer.toneMapping = THREE.CineonToneMapping; // OR THREE.ACESFilmicToneMapping
-    renderer.toneMappingExposure = 2.5;
-    // renderer.gammaFactor = 0;
-    // renderer.shadowMap.enabled = true; // Enable shadows globally
-    renderer.setPixelRatio(window.devicePixelRatio);
+    this.renderer.physicallyCorrectLights = true;
+    this.renderer.outputEncoding = THREE.sRGBEncoding;
+    this.renderer.toneMapping = THREE.CineonToneMapping; // OR THREE.ACESFilmicToneMapping
+    this.renderer.toneMappingExposure = 2.5;
+    this.renderer.setPixelRatio(window.devicePixelRatio);
+    // this.renderer.gammaFactor = 0;
+    // this.renderer.shadowMap.enabled = true; // Enable shadows globally
 
-    const texture = new THREE.CanvasTexture(new FlakesTexture());
-    texture.wrapS = THREE.RepeatWrapping;
-    texture.wrapT = THREE.RepeatWrapping;
-    texture.repeat.x = 10;
-    texture.repeat.y = 6;
+    // const texture = new THREE.CanvasTexture(new FlakesTexture());
+    // texture.wrapS = THREE.RepeatWrapping;
+    // texture.wrapT = THREE.RepeatWrapping;
+    // texture.repeat.x = 10;
+    // texture.repeat.y = 6;
 
     // const ambientLight = new THREE.AmbientLight(0xcccccc, 0.9);
     // scene.add(ambientLight);
@@ -100,8 +103,8 @@ export class HeaderComponent implements OnInit {
       // toneMapping and toneMappingExposure of the renderer above
       .load('studio.exr', hdr => {
         hdr.mapping = THREE.EquirectangularReflectionMapping;
-        scene.environment = hdr;
-        // scene.background = hdr; // Show the environment as background as well
+        this.scene.environment = hdr;
+        // this.scene.background = hdr; // Show the environment as background as well
 
         const dracoLoader = new DRACOLoader(); // To uncompress the gltf if it is compressed
         // Grab the latest version of draco_wasm_wrapper.js and draco_decoder.wasm from
@@ -137,46 +140,39 @@ export class HeaderComponent implements OnInit {
               }
             });
 
-            scene.add(model);
-            camera = gltf.cameras[0];
-            const sizes = document.getElementsByTagName("app-header")[0].getBoundingClientRect();
-            camera.aspect = sizes.width / sizes.height;
-            camera?.updateProjectionMatrix();
-            renderer.setSize(sizes.width, sizes.height);
+            this.scene.add(model);
+            this.camera = gltf.cameras[0];
+            this.resize();
 
-            const mixer = new THREE.AnimationMixer(gltf.scene);
-            // const mixer = new THREE.AnimationMixer(camera);
+            const mixer = new THREE.AnimationMixer(gltf.scene /* OR camera */);
             const animation = mixer.clipAction(gltf.animations[0]);
-            animation.setLoop(THREE.LoopPingPong);
+            // animation.setLoop(THREE.LoopPingPong);
             animation.timeScale = 1 / 3;
             animation.play();
 
             this.showStatic3dLogo = false;
-
-            this.animate(renderer, scene, camera, mixer, logo);
+            this.animate(mixer);
           }, () => {}, undefined, error => {
             alert(error);
           });
       });
 
-    // FIXME: The canvas is not resized when the windows is resized
-    window.addEventListener('resize', () => {
-      const sizes = document.getElementsByTagName("app-header")[0].getBoundingClientRect();
-      if (camera) camera.aspect = sizes.width / sizes.height;
-      camera?.updateProjectionMatrix();
-
-      // Call this after updating the camera to prevent animation jitter
-      renderer?.setSize(sizes.width, sizes.height);
-    });
+    window.addEventListener('resize', this.resize);
   }
 
-  private animate(renderer, scene, camera, mixer, logo) {
-    requestAnimationFrame(() => this.animate(renderer, scene, camera, mixer, logo));
+  private resize() {
+    const sizes = this.container.getBoundingClientRect();
+    if (this.camera) this.camera.aspect = sizes.width / sizes.height;
+    this.camera?.updateProjectionMatrix();
+    this.renderer?.setSize(sizes.width, sizes.height);
+  }
+
+  private animate(mixer) {
+    requestAnimationFrame(() => this.animate(mixer));
     const delta = this.clock.getDelta();
     mixer?.update(delta);
-    // logo.material.opacity -= 0.001;
-    renderer.render(scene, camera);
-    camera.lookAt(0.0, 0.0, 0.6);
+    this.renderer.render(this.scene, this.camera);
+    // camera.lookAt(0.0, 0.0, 0.6);
     // camera.updateProjectionMatrix()
   }
 

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {GLTFLoader} from 'three/examples/jsm/loaders/GLTFLoader.js';
 import {EXRLoader} from 'three/examples/jsm/loaders/EXRLoader.js';
+import {GLTFLoader} from 'three/examples/jsm/loaders/GLTFLoader.js';
 import {DRACOLoader} from 'three/examples/jsm/loaders/DRACOLoader.js';
 import {FlakesTexture} from 'three/examples/jsm/textures/FlakesTexture.js';
 import * as THREE from 'three';

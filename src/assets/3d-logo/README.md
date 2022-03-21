@@ -13,9 +13,10 @@ Another way to bake the color is to link the color output of ColorBump node from
 
 Bake other kind of texures (roughness, normal, etc.) as described in the YouTube video (links below).
 
-To bake all the values combined, select "combined" from the bake type. after the bake is complete and we save the image, we create a new image texture node (or use the existing one)
-and click the folder icon and select the image. Then, the color output of this node should go 
-to the color input of the Principled BSDF node (the other links are removed).
+To bake all the values combined, select "combined" from the bake type (no need to set metallic value of material to 0) (also select direct and indirect and all the other lighting options).
+After the bake is complete and we save the image, create a new image texture node (or use the existing one)
+and click the folder icon and select the image from disk. Then, the color output of this node should go 
+to the color input of the Principled BSDF node (remove the other input links).
 
 See [How to bake procedural materials in Blender](https://youtu.be/AioskAgcU2U)
 See [How to bake metalic maps in Blender](https://youtu.be/aaRspfc9OBU)
@@ -24,19 +25,20 @@ See this not so much related video about [shadow catchers](https://youtu.be/GIGK
 See https://blender.stackexchange.com/q/95782
 
 To edit curves and paths, select the path or curve and then go to edit mode by pressing Tab (or selecting edit mode from top-left corner)
-To extend (add node) to a bezier curve select the curve or one of its nodes by dragging over it and press E.
+To extend (add node) to a Bézier curve select the curve or one of its nodes by dragging over it and press E.
 To grab and move a node or a node handle, drag over it and press G.
 To move the view, hold shift and drag the mouse middle button.
 To connect two nodes together (fill), select both of them and press F or press Alt + C (close).
 To set the exact position of a node, select it and then near the gizmo and the right toolbar drag the small arrow to the left to open the "Item" menu which contains the coordinates.
+To change the starting node of a path or curve, first enable "Bsurface" addon from Edit -> preferences. Select the path and press tab to go to edit mode. select the desired note to be the first node. Then from near the gizmo on the top right drag the small arrow to the left to open the panel and then select the Edit tab and from the Bsurfaces section click "Set First Points". See https://blender.stackexchange.com/a/153908
 
 We can simply animate position of the camera manually with no problem. However, to animate the camera along a path and then export the animation (bake) to gltf, see below links.
-To animate the camera along a path see https://blender.stackexchange.com/a/46898
+To animate the camera along a path see https://blender.stackexchange.com/a/46898 and https://youtu.be/mkD7S7wLx1I
+(make sure to set the camera coordinates to 0,0,0 so it is placed on the path).
 To export camera animation along a path see https://youtu.be/omAoKWyG_J4
 (set the keyframes as close as possible so that when the animation is converted it takes less size. Bit it seems to make camera movement not so smooth. We can then set the animation speed in three.js however we want). Also, baking seems to have the advantage that it does not require `camera.lookAt(...)` to be set in every frame of Three.js animation.
 
 If the object lighting in three.js is not good, try to change the toneMapping and/or tweak toneMappingExposure of the three.js renderer.
-
 
 ## Environments
 Some environment files were taken from Blender.

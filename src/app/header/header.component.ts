@@ -106,10 +106,14 @@ export class HeaderComponent implements OnInit {
         this.scene.environment = hdr;
         // this.scene.background = hdr; // Show the environment as background as well
 
-        const dracoLoader = new DRACOLoader(); // To uncompress the gltf if it is compressed
+        // To uncompress the gltf data if it is compressed.
         // Grab the latest version of draco_wasm_wrapper.js and draco_decoder.wasm from
-        // <project-path>\node_modules\three\examples\js\libs\draco\ and place them in below dir
+        // <project-path>\node_modules\three\examples\js\libs\draco\ and place them in the
+        // directory specified below in `setDecoderPath()`.
+        // See https://github.com/mrdoob/three.js/tree/dev/examples/js/libs/draco#readme
+        const dracoLoader = new DRACOLoader();
         dracoLoader.setDecoderPath('assets/3d-logo/draco/');
+
         new GLTFLoader()
           .setPath('assets/3d-logo/')
           .setDRACOLoader(dracoLoader)
@@ -161,6 +165,12 @@ export class HeaderComponent implements OnInit {
     window.addEventListener('resize', this.resize.bind(this))
   }
 
+  /**
+   * See https://stackoverflow.com/a/20434960
+   * and https://discourse.threejs.org/t/why-is-aspect-a-property-of-the-camera-and-size-of-the-renderer/13870
+   *
+   * @private
+   */
   private resize() {
     const rect = this.container.getBoundingClientRect();
     if (this.camera) this.camera.aspect = rect.width / rect.height;

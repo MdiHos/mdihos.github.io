@@ -76,6 +76,7 @@ export class HeaderComponent implements OnInit {
     this.renderer.toneMapping = THREE.CineonToneMapping; // OR THREE.ACESFilmicToneMapping
     this.renderer.toneMappingExposure = 2.5;
     this.renderer.setPixelRatio(window.devicePixelRatio);
+    this.renderer.shadowMap.enabled = true; // Enable shadows globally
     // this.renderer.gammaFactor = 0;
     // this.renderer.shadowMap.enabled = true; // Enable shadows globally
 
@@ -88,14 +89,19 @@ export class HeaderComponent implements OnInit {
     // const ambientLight = new THREE.AmbientLight(0xcccccc, 0.9);
     // scene.add(ambientLight);
 
-    // const planeGeometry = new THREE.PlaneGeometry(100, 100);
-    // // const planeGeometry = new THREE.PlaneBufferGeometry(2000, 2000, 8, 8);
-    // const planeMaterial = new THREE.ShadowMaterial();
-    // planeMaterial.opacity = 0.5;
-    // const plane = new THREE.Mesh(planeGeometry, planeMaterial);
-    // plane.receiveShadow = true;
-    // plane.rotateX(-Math.PI / 2);
-    // scene.add(plane);
+    const dirLight = new THREE.DirectionalLight(0xffffff, 1);
+    dirLight.castShadow = true;
+    dirLight.position.set(0, 4, 5);
+    this.scene.add(dirLight);
+    const planeGeometry = new THREE.PlaneGeometry(20, 20);
+    const planeMaterial = new THREE.ShadowMaterial();
+    // const planeMaterial = new THREE.MeshStandardMaterial();
+    planeMaterial.opacity = 0.1;
+    const plane = new THREE.Mesh(planeGeometry, planeMaterial);
+    plane.castShadow = true;
+    plane.receiveShadow = true;
+    plane.rotateX(-Math.PI / 2);
+    this.scene.add(plane);
 
     new EXRLoader() // Use RGBELoader for .hdr files
       .setPath('assets/3d-logo/environments/')
@@ -139,7 +145,7 @@ export class HeaderComponent implements OnInit {
             model.traverse(object => {
               if (object.isMesh) {
                 logo = object;
-                // object.castShadow = true; // See https://stackoverflow.com/q/49869345
+                object.castShadow = true; // See https://stackoverflow.com/q/49869345
                 object.material.transparent = true;
               }
             });

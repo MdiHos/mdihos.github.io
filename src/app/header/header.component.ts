@@ -109,7 +109,7 @@ export class HeaderComponent implements OnInit {
         const dracoLoader = new DRACOLoader(); // To uncompress the gltf if it is compressed
         // Grab the latest version of draco_wasm_wrapper.js and draco_decoder.wasm from
         // <project-path>\node_modules\three\examples\js\libs\draco\ and place them in below dir
-        dracoLoader.setDecoderPath( 'assets/3d-logo/draco/' );
+        dracoLoader.setDecoderPath('assets/3d-logo/draco/');
         new GLTFLoader()
           .setPath('assets/3d-logo/')
           .setDRACOLoader(dracoLoader)
@@ -162,10 +162,10 @@ export class HeaderComponent implements OnInit {
   }
 
   private resize() {
-    const sizes = this.container.getBoundingClientRect();
-    if (this.camera) this.camera.aspect = sizes.width / sizes.height;
+    const rect = this.container.getBoundingClientRect();
+    if (this.camera) this.camera.aspect = rect.width / rect.height;
     this.camera?.updateProjectionMatrix();
-    this.renderer?.setSize(sizes.width, sizes.height);
+    this.renderer?.setSize(rect.width, rect.height);
   }
 
   private animate(mixer) {

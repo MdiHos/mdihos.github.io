@@ -84,19 +84,19 @@ export class HeaderComponent implements OnInit {
     // scene.add(ambientLight);
 
     // Set the intensity to 0 so the logo appearance is not effected
-    const light = new THREE.DirectionalLight(0xffffff, 0.8);
-    light.castShadow = true;
-    light.shadow.radius = 10; // Soften the shadow
-    light.position.set(1, 4, 5);
-    this.scene.add(light);
-    const planeGeometry = new THREE.PlaneGeometry(20, 20);
-    const planeMaterial = new THREE.ShadowMaterial(); // To see the plane THREE.MeshStandardMaterial()
-    planeMaterial.opacity = 0.15;
-    const plane = new THREE.Mesh(planeGeometry, planeMaterial);
-    plane.receiveShadow = true;
-    plane.rotateX(-Math.PI / 2);
+    // const light = new THREE.DirectionalLight(0xffffff, 0.8);
+    // light.castShadow = true;
+    // light.shadow.radius = 10; // Soften the shadow
+    // light.position.set(1, 4, 5);
+    // this.scene.add(light);
+    // const planeGeometry = new THREE.PlaneGeometry(20, 20);
+    // const planeMaterial = new THREE.ShadowMaterial(); // To see the plane THREE.MeshStandardMaterial()
+    // planeMaterial.opacity = 0.15;
+    // const plane = new THREE.Mesh(planeGeometry, planeMaterial);
+    // plane.receiveShadow = true;
+    // plane.rotateX(-Math.PI / 2);
     // plane.position.y = 0;
-    this.scene.add(plane);
+    // this.scene.add(plane);
 
     new EXRLoader() // Use RGBELoader for .hdr files
       .setPath('assets/3d-logo/environments/')

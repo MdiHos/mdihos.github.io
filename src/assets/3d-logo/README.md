@@ -44,3 +44,29 @@ If the object lighting in three.js is not good, try to change the toneMapping an
 Some environment files were taken from Blender.
 
 They are available in <blender-install-path>\datafiles\studiolights\world\
+
+### Shadows
+Environment maps (HDRIs) do not cast shadow. Or in other words: They can be used in combination with shadow mapping
+(see [this post](https://discourse.threejs.org/t/shadow-problem-with-env-map/16871/3)).
+To show shadows in Three.js see below links:
+  - https://stackoverflow.com/q/65655433
+  - https://stackoverflow.com/q/66949832
+  - https://stackoverflow.com/q/62280231
+  - https://stackoverflow.com/q/35710130
+  - https://discourse.threejs.org/t/shadow-on-itself-gltf-model/22272
+  - https://youtu.be/AUF15I3sy6s
+
+Before baking, select Non-Color as the color space of the image texture node.
+OR select sRGB as the color space of the image texture node to produce subtler shadows.
+
+To bake, remember to disconnect the image texture node output first to or a total black result is produced.
+After baking is finished, remember to connect the output of the image texture node!
+
+Make sure to turn the "roughness" and "metallic" of the Principled BSDF node to 1 so
+the shadows are shown for all frames of the animation correctly.
+
+We can save a frame of the animation from Chrome by right-clicking on the image and saving it.
+The render sample count for ambient occlusion matters.
+
+To make the shadows a little more interesting and noisy set a low sample count (`20`) in 
+the render settings. I used `2048`.

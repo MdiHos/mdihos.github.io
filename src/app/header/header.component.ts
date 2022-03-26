@@ -13,7 +13,7 @@ import * as THREE from 'three';
 export class HeaderComponent implements OnInit {
 
   clock = new THREE.Clock();
-  showStatic3dLogo: boolean = true;
+  is3DLogoLoading: boolean = true;
   container: Element;
   renderer: THREE.WebGLRenderer;
   scene = new THREE.Scene();
@@ -155,7 +155,7 @@ export class HeaderComponent implements OnInit {
             animation.timeScale = 1 / 3;
             animation.play();
 
-            this.showStatic3dLogo = false;
+            this.is3DLogoLoading = false;
             this.animate(mixer);
           }, () => {}, undefined, error => {
             alert(error);

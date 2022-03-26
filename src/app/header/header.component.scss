@@ -4,15 +4,21 @@
 }
 
 #canvas {
-  /* NOTE: Setting dimensions here will not effect the element because
+  /* NOTE: Setting dimensions here will not effect the final element because
    *  Three.js sets inline styles on the element which override these.
+   *  We can, however, set initial dimensions applied before Three.js sets them.
    */
+
+  width: 100%; // Set the initial width to avoid scrollbar being shown
 }
 
-.static-3d-logo {
-  // The original 3d images are available in https://github.com/mahozad/mahozad repository
-  background: url("/assets/img/logo-3d.jpg") no-repeat center center;
-  background-size: cover;
+.spinner {
+  width: 32px;
+  position: absolute;
+  inset-inline-start: 50%;
+  inset-block-start: 50%;
+  transform: translate(-50%, -50%);
+  stroke: var(--spinner-color);
 }
 
 #icon {
@@ -25,53 +31,4 @@
   inset-block-end: 20px;
   inset-inline-end: 50%;
   transform: translate(50%, 0);
-}
-
-@media screen and (max-width: 1000px) and (max-height: 700px) {
-  .static-3d-logo {
-    background: url("/assets/img/logo-3d-wide-1.jpg") no-repeat center center;
-    background-size: cover;
-  }
-}
-
-@media screen and (max-height: 400px), screen and (max-height: 700px) {
-  .static-3d-logo {
-    background: url("/assets/img/logo-3d-wide-2.jpg") no-repeat center center;
-    background-size: contain;
-  }
-}
-
-@media screen and (max-width: 700px) and (max-height: 1000px) {
-  .static-3d-logo {
-    background: url("/assets/img/logo-3d-square.jpg") no-repeat center center;
-    background-size: contain;
-  }
-}
-
-@media screen and (max-width: 700px) and (max-height: 700px) {
-  .static-3d-logo {
-    background: url("/assets/img/logo-3d-wide-1.jpg") no-repeat center center;
-    background-size: cover;
-  }
-}
-
-@media screen and (max-width: 700px) and (max-height: 400px) {
-  .static-3d-logo {
-    background: url("/assets/img/logo-3d-wide-2.jpg") no-repeat center center;
-    background-size: cover;
-  }
-}
-
-@media screen and (max-width: 320px) and (max-height: 1000px) {
-  .static-3d-logo {
-    background: url("/assets/img/logo-3d-square.jpg") no-repeat center center;
-    background-size: contain;
-  }
-}
-
-@media screen and (max-width: 320px) and (max-height: 400px) {
-  .static-3d-logo {
-    background: url("/assets/img/logo-3d-wide-2.jpg") no-repeat center center;
-    background-size: cover;
-  }
 }

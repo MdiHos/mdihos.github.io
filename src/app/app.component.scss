@@ -25,6 +25,19 @@
   }
 }
 
+theme-switch {
+  position: absolute;
+  background: var(--card-background-color);
+  inset-block-start: 8px;
+  inset-inline-end: 8px;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  padding: 8px;
+  border: var(--card-border-thickness) solid var(--card-border-color);
+  --theme-switch-icon-color: var(--header-icons-color);
+}
+
 #info.expanded {
   width: 130px;
   height: 110px;

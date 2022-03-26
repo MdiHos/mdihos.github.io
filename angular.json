@@ -33,7 +33,13 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              {
+                "input": "node_modules/@mahozad/theme-switch/dist/theme-switch.min.js",
+                "inject": false,
+                "bundleName": "theme-switch"
+              }
+            ]
           },
           "configurations": {
             "production": {

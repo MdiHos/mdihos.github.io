@@ -1,4 +1,5 @@
-<div id="info">
+<!-- See https://stackoverflow.com/a/42643593/8583692 -->
+<div id="info" [class.expanded]="isExpanded" (click)="isExpanded=!isExpanded" (clickOutside)="isExpanded=false">
   <div>Designed all by meself!</div>
   <div>Created with Angular</div>
   <div>Last update: {{lastUpdate}}</div>

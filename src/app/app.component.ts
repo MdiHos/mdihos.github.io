@@ -21,6 +21,7 @@ export class AppComponent implements OnInit {
   title = 'mahozad-angular';
   isLoadingGHRest = true;
   lastUpdate = '';
+  isExpanded = false;
 
   constructor(private http: HttpClient) {}
 

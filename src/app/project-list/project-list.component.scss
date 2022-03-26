@@ -8,7 +8,7 @@
 }
 
 #works-title {
-  color: #333;
+  color: var(--works-title-text-color);
   font-weight: bold;
   margin-block-start: 16px;
 }
@@ -41,7 +41,7 @@
 }
 
 .work, .work:visited {
-  color: #333;
+  color: var(--work-text-color);
 }
 
 .work .name {

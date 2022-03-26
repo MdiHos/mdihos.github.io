@@ -10,11 +10,12 @@
   align-items: center;
   justify-content: space-between;
   text-decoration: none;
-  color: #333; /* Override the default color of links */
+  /* Override the default color of links */
+  color: var(--honor-text-color);
 
   &:visited { color: #333; }
 
-  img { height: 42px; }
+  img, svg { height: 42px; }
 }
 
 #github-stats {
@@ -34,7 +35,7 @@
   flex-direction: column;
   font-size: 12px;
 
-  img { height: 12px; }
+  img, svg { height: 12px; }
 
   .first-line {
     margin-block-start: 9px;
@@ -60,6 +61,7 @@
 .first-line, .second-line {
   display: flex;
   align-items: center;
+  color: var(--honor-text-color)
 }
 
 .badge {

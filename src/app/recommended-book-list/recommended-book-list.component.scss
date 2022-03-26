@@ -1,5 +1,6 @@
 .header {
   width: 160px;
+  color: var(--books-header-text-color);
   background: var(--card-background-color);
   padding: 20px;
   text-align: center;
@@ -25,6 +26,10 @@
   border-start-start-radius: 100px;
   border-end-start-radius: 100px;
 
+  a {
+    color: var(--book-link-color);
+  }
+
   .name {
     display: block;
     width: 300px;
@@ -44,6 +49,7 @@
     font-size: 12px;
     margin-block-start: 4px;
     text-align: start;
+    color: var(--book-author-text-color);
 
     &:before { content: "by "; }
   }

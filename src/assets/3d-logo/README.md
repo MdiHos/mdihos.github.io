@@ -24,6 +24,7 @@ After the bake is complete and we saved the image, create a new image texture no
 and click the folder icon and select the image from disk. Then, the color output of this node should go 
 to the color input of the Principled BSDF node.
 
+See [How to bake ambient occlusion of a plane with transparency?](https://blender.stackexchange.com/q/258269/145265)
 See [How to bake procedural materials in Blender](https://youtu.be/AioskAgcU2U)
 See [How to bake metallic maps in Blender](https://youtu.be/aaRspfc9OBU)
 See [Why the bake color is black](https://blender.stackexchange.com/q/95782)
@@ -46,6 +47,8 @@ To animate the camera along a path see https://blender.stackexchange.com/a/46898
 To export camera animation along a path, select the camera then click the menu item *Object* -> *Animation* -> *Bake Action...*. Select *Only Selected Bones*, *Visual Keying*, and *Clear Constraints* checkboxes and click OK. See https://youtu.be/omAoKWyG_J4
 (set the keyframes as close as possible so that when the animation is converted, it takes less size. Bit it seems to make camera movement not so smooth)(We can set the animation speed in three.js to whatever speed we want). Also, baking seems to have the advantage that it does not require `camera.lookAt(...)` to be set in every frame of Three.js animation.
 
+See [this post](https://stackoverflow.com/q/60704912/8583692) and [this post](https://stackoverflow.com/q/58194893/8583692).
+
 ### Environments
 Some environment files were taken from Blender.
 
@@ -60,15 +63,25 @@ To show shadows in Three.js see below links:
   - https://stackoverflow.com/q/66949832
   - https://stackoverflow.com/q/62280231
   - https://stackoverflow.com/q/35710130
+  - https://stackoverflow.com/q/41212156
+  - https://blender.stackexchange.com/q/89944
   - https://discourse.threejs.org/t/shadow-on-itself-gltf-model/22272
   - https://youtu.be/AUF15I3sy6s
+  - https://youtu.be/Px-oUVJZWsE
+  - https://stackoverflow.com/q/19914697
+  - https://blender.stackexchange.com/q/41555
+  - [Using compositing nodes in Blender 2.8](https://youtu.be/_m5sddzRhsA)
 
 See this video about [making a plane shadow catcher in Blender](https://youtu.be/GIGKit1e3u8).
+
+Instead of baking the AO (Ambient Occlusion), we can bake the shadows (in other words, make a light map) of the plane.
+See https://discourse.threejs.org/t/ambient-oclusion-vs-lightmaps/31333
 
 Before baking ambient occlusion for the plane, select *Non-Color* (or *sRGB* to produce subtler shadows) as the color space of the image texture node.
 
 To bake plane ambient occlusion (ao), remember to first disconnect the image texture node output or a total black result is produced.
 After baking is finished, remember to connect the output of the image texture node back to alpha input!
+If you try to invert the image color, it is not immediately reflected in the image shown in blender. 
 
 Make sure to set  the *Roughness* and *Metallic* of the Principled BSDF node to `1` so
 the shadows are shown for all frames of the animation correctly.
@@ -79,3 +92,29 @@ The render sample count for ambient occlusion matters.
 
 To make the shadows a little more interesting and noisy set a low sample count (`20`) in 
 the render settings. I used `2048`.
+
+Also, see [this YouTube video](https://youtu.be/cJ66-WWY37I).
+
+### Exporting to glTF
+Export the scene vto glTF from *File* -> *Export* -> *glTF 2.0* ->
+
+  format: gltf binary (.glb)
+  include: cameras
+  transform: +Y Up
+  geometry: UVs, Normals, Vertex Colors
+
+
+### Miscellaneous
+Read [Blender official documentations about glTF](https://docs.blender.org/manual/en/3.1/addons/import_export/scene_gltf2.html).
+
+For importing and extruding an SVG icon and also making good shadows, see
+[Tutorial: Rendering 2D Icons as 3D Objects in Blender](https://youtu.be/zthvZvw-yJE) and
+[Three.js Realistic Lighting Setup Tutorial](https://youtu.be/7GGNzryHfTw).
+
+See [Part 3: Creating a glTF-compatible Blender material from a set of PBR textures](https://youtu.be/70LRKp54zIc) for a sieries of videos explaining how to export to glTF.
+
+To change materials of an imported glTF scene in Three.js see [this post](https://stackoverflow.com/a/56674907/8583692).
+
+See [this video](https://youtu.be/1TeMXIWRrqE) for a similar logo with shadows etc. imported to Three.js.
+
+See [CSS-TRICKS: Creating Photorealistic 3D Graphics on the Web](https://css-tricks.com/creating-photorealistic-3d-graphics-web/).

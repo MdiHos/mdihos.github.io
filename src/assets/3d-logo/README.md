@@ -1,7 +1,7 @@
-### Logo look and feel and lighting
+## Logo look and feel and lighting
 If the object lighting in three.js is not good, try to change the toneMapping and/or tweak toneMappingExposure of the three.js renderer.
 
-### Baking and applying textures to the logo
+## Baking and applying textures to the logo
 First, apply all the modifiers by selecting the object then opening the modifiers panel (the wrench icon on the middle right) and clicking on each of the modifier arrows and selecting *apply*.
 
 Next, select *UV Editing* tab and press <kbd>A</kbd> to select all parts of the logo mesh and then press <kbd>U</kbd> or click "UV" tab from the top bar
@@ -30,7 +30,7 @@ See [How to bake metallic maps in Blender](https://youtu.be/aaRspfc9OBU)
 See [Why the bake color is black](https://blender.stackexchange.com/q/95782)
 See [Blender Cycles: baked texture is completely black](https://blender.stackexchange.com/q/95782)
 
-### Curves and paths
+## Curves and paths
 To edit curves and paths, select the path or curve and then go to edit mode by pressing Tab (or selecting edit mode from top-left corner)
 To extend (add node) to a Bézier curve, select the curve or one of its nodes by dragging over it with mouse and press <kbd>E</kbd>.
 To grab and move a node or a node handle, drag over it and press <kbd>G</kbd>.
@@ -39,7 +39,7 @@ To connect two nodes together (fill), select both of them and press <kbd>F</kbd>
 To set the exact position of a node, select it and then near the gizmo and the right toolbar, drag the small arrow to the left to open the "Item" menu which contains the coordinates.
 To change the starting node of a path or curve, first enable *Bsurfaces* addon from Edit -> preferences. Select the path and press tab to go to edit mode. Select the desired node to be the first node. Then from near the gizmo on the top right drag the small arrow to the left to open the panel and then select the Edit tab and from the Bsurfaces section click "Set First Points". See [Set the start point of a Bézier curve](https://blender.stackexchange.com/a/153908).
 
-### Animating the camera
+## Animating the camera
 We can simply animate position of the camera manually with no problem. However, to animate the camera along a path and then export the animation (bake) to gltf, see below.
 
 To animate the camera along a path see https://blender.stackexchange.com/a/46898 and https://youtu.be/mkD7S7wLx1I (make sure to set camera x, y, z `0` so it is placed on the path).
@@ -49,12 +49,12 @@ To export camera animation along a path, select the camera then click the menu i
 
 See [this post](https://stackoverflow.com/q/60704912/8583692) and [this post](https://stackoverflow.com/q/58194893/8583692).
 
-### Environments
+## Environments
 Some environment files were taken from Blender.
 
 They are available in <blender-install-path>\datafiles\studiolights\world\
 
-### Shadows
+## Shadows
 Environment maps (HDRIs) do not cast shadow in Three.js. Or in other words: They can be used in combination with shadow mapping
 (see [this post](https://discourse.threejs.org/t/shadow-problem-with-env-map/16871/3)).
 
@@ -95,7 +95,7 @@ the render settings. I used `2048`.
 
 Also, see [this YouTube video](https://youtu.be/cJ66-WWY37I).
 
-### Exporting to glTF
+## Exporting to glTF
 Export the scene vto glTF from *File* -> *Export* -> *glTF 2.0* ->
 
   format: gltf binary (.glb)
@@ -104,7 +104,7 @@ Export the scene vto glTF from *File* -> *Export* -> *glTF 2.0* ->
   geometry: UVs, Normals, Vertex Colors
 
 
-### Miscellaneous
+## Miscellaneous
 Read [Blender official documentations about glTF](https://docs.blender.org/manual/en/3.1/addons/import_export/scene_gltf2.html).
 
 For importing and extruding an SVG icon and also making good shadows, see

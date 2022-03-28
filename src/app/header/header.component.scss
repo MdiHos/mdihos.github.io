@@ -19,6 +19,15 @@
   inset-block-start: 50%;
   transform: translate(-50%, -50%);
   stroke: var(--spinner-color);
+
+  circle {
+    animation: spinner 1s linear infinite;
+    transform-origin: 12px 12px;
+  }
+}
+
+@keyframes spinner {
+  to { transform: rotate(360deg); }
 }
 
 #icon {

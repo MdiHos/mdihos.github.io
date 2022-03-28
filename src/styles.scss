@@ -41,6 +41,7 @@
   --card-border-thickness: 1px;
   --body-background-color: #fff;
   --header-icons-color: #8a6d01ee;
+  --stats-loading-icon-color: #333;
   // NOTE: No need to transition other properties because user has to scroll to top to click the switch theme icon and
   //  the only thing that changes and is visible at the top of the page is background colors
   transition: background-color 300ms ease;
@@ -65,4 +66,5 @@ html {
   --card-border-color: var(--color-yellow-3);
   --info-text-color: var(--color-yellow-5);
   --book-link-color: #00b9ff;
+  --stats-loading-icon-color: #ddd;
 }

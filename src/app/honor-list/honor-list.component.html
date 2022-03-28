@@ -5,23 +5,39 @@
     </svg>
     <div class="first-line">
       <span class="title">Reputation:&nbsp;</span>
-      <img class="loading-icon" *ngIf="isLoadingSO" src="/assets/img/loading.svg" alt="Loading...">
+      <svg class="loading-icon" *ngIf="isLoadingSO" viewBox="0 0 24 24">
+        <use href="/assets/img/loading.svg#icon">
+          <animateTransform attributeName="transform" type="rotate" dur="1s" repeatCount="indefinite" from="0 12 12" to="360 12 12"/>
+        </use>
+      </svg>
       <span class="green">{{stackoverflow.reputation}}</span>
     </div>
     <div class="second-line">
       <div class="badge">
         <svg viewBox="0 0 24 24" class="badge-icon gold-badge"><use href="/assets/img/circle.svg#icon"/></svg>
-        <img class="loading-icon" *ngIf="isLoadingSO" src="/assets/img/loading.svg" alt="Loading...">
+        <svg class="loading-icon" *ngIf="isLoadingSO" viewBox="0 0 24 24">
+          <use href="/assets/img/loading.svg#icon">
+            <animateTransform attributeName="transform" type="rotate" dur="1s" repeatCount="indefinite" from="0 12 12" to="360 12 12"/>
+          </use>
+        </svg>
         <span>{{stackoverflow.goldBadges}}</span>
       </div>
       <div class="badge">
         <svg viewBox="0 0 24 24" class="badge-icon silver-badge"><use href="/assets/img/circle.svg#icon"/></svg>
-        <img class="loading-icon" *ngIf="isLoadingSO" src="/assets/img/loading.svg" alt="Loading...">
+        <svg class="loading-icon" *ngIf="isLoadingSO" viewBox="0 0 24 24">
+          <use href="/assets/img/loading.svg#icon">
+            <animateTransform attributeName="transform" type="rotate" dur="1s" repeatCount="indefinite" from="0 12 12" to="360 12 12"/>
+          </use>
+        </svg>
         <span>{{stackoverflow.silverBadges}}</span>
       </div>
       <div class="badge">
         <svg viewBox="0 0 24 24" class="badge-icon bronze-badge"><use href="/assets/img/circle.svg#icon"/></svg>
-        <img class="loading-icon" *ngIf="isLoadingSO" src="/assets/img/loading.svg" alt="Loading...">
+        <svg class="loading-icon" *ngIf="isLoadingSO" viewBox="0 0 24 24">
+          <use href="/assets/img/loading.svg#icon">
+            <animateTransform attributeName="transform" type="rotate" dur="1s" repeatCount="indefinite" from="0 12 12" to="360 12 12"/>
+          </use>
+        </svg>
         <span>{{stackoverflow.bronzeBadges}}</span>
       </div>
     </div>
@@ -48,12 +64,20 @@
 
     <div class="first-line">
       <span>Contributions:&nbsp;</span>
-      <img class="loading-icon" *ngIf="isLoadingGHGraphQL" src="/assets/img/loading.svg" alt="Loading...">
+      <svg class="loading-icon" *ngIf="isLoadingGHGraphQL" viewBox="0 0 24 24">
+        <use href="/assets/img/loading.svg#icon">
+          <animateTransform attributeName="transform" type="rotate" dur="1s" repeatCount="indefinite" from="0 12 12" to="360 12 12"/>
+        </use>
+      </svg>
       <span class="green">{{github.contributions}}</span>
     </div>
     <div class="second-line">
       <span>Repositories:&nbsp;</span>
-      <img class="loading-icon" *ngIf="isLoadingGHRest" src="/assets/img/loading.svg" alt="Loading...">
+      <svg class="loading-icon" *ngIf="isLoadingGHRest" viewBox="0 0 24 24">
+        <use href="/assets/img/loading.svg#icon">
+          <animateTransform attributeName="transform" type="rotate" dur="1s" repeatCount="indefinite" from="0 12 12" to="360 12 12"/>
+        </use>
+      </svg>
       <span>{{github.repos}}</span>
     </div>
   </div>

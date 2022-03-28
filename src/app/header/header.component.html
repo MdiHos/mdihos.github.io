@@ -24,51 +24,9 @@
     <symbol id="arrow" stroke="var(--header-icons-color)" fill="none" stroke-linecap="round" stroke-width="2">
       <path d="m8 4 4 4 4-4"/>
     </symbol>
-    <use href="#arrow" y="-6">
-      <animate
-        attributeName="y"
-        to="0"
-        dur="1s"
-        calcMode="spline"
-        keyTimes="0; 1"
-        keySplines="0.37, 0, 0.63, 1"
-        repeatCount="indefinite"/>
-      <animate attributeName="opacity" dur="1s" repeatCount="indefinite" from="0" to="1" calcMode="spline"
-               keyTimes="0; 1"
-               keySplines="0.37, 0, 0.63, 1"/>
-    </use>
-    <use href="#arrow">
-      <animate
-        attributeName="y"
-        to="6"
-        dur="1s"
-        calcMode="spline"
-        keyTimes="0; 1"
-        keySplines="0.37, 0, 0.63, 1"
-        repeatCount="indefinite"/>
-    </use>
-    <use href="#arrow" y="6">
-      <animate
-        attributeName="y"
-        to="12"
-        dur="1s"
-        calcMode="spline"
-        keyTimes="0; 1"
-        keySplines="0.37, 0, 0.63, 1"
-        repeatCount="indefinite"/>
-    </use>
-    <use href="#arrow" y="12">
-      <animate
-        attributeName="y"
-        to="16"
-        dur="1s"
-        calcMode="spline"
-        keyTimes="0; 1"
-        keySplines="0.37, 0, 0.63, 1"
-        repeatCount="indefinite"/>
-      <animate attributeName="opacity" dur="1s" repeatCount="indefinite" to="0" calcMode="spline"
-               keyTimes="0; 1"
-               keySplines="0.37, 0, 0.63, 1"/>
-    </use>
+    <use id="arrow1" href="#arrow" y="-6" opacity="0"/>
+    <use id="arrow2" href="#arrow" y="0"/>
+    <use id="arrow3" href="#arrow" y="6"/>
+    <use id="arrow4" href="#arrow" y="12"/>
   </svg>
 </a>

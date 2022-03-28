@@ -32,3 +32,30 @@
   inset-inline-end: 50%;
   transform: translate(50%, 0);
 }
+
+#arrow1 { animation: drop1 1s ease infinite; }
+#arrow2 { animation: drop2 1s ease infinite; }
+#arrow3 { animation: drop3 1s ease infinite; }
+#arrow4 { animation: drop4 1s ease infinite; }
+
+@keyframes drop1 {
+  to {
+    y: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes drop2 {
+  to { y: 6; }
+}
+
+@keyframes drop3 {
+  to { y: 12; }
+}
+
+@keyframes drop4 {
+  to {
+    y: 16;
+    opacity: 0;
+  }
+}

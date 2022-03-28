@@ -1,7 +1,7 @@
 #info {
   position: absolute;
-  background: var(--card-background-color) url("/assets/img/info.svg") no-repeat 50% 8px;
   color: var(--info-text-color);
+  background: var(--card-background-color);
   inset-block-start: 8px;
   inset-inline-start: 8px;
   border-radius: 50%;
@@ -16,12 +16,19 @@
   user-select: none;
   -webkit-user-select: none;
 
+  svg {
+    width: 24px;
+    height: 24px;
+    margin-inline-start: 50%;
+    transform: translateX(-50%);
+  }
+
   div {
     margin-block-start: 8px;
   }
 
   div:first-of-type {
-    margin-block-start: 36px;
+    margin-block-start: 12px;
   }
 }
 

@@ -38,7 +38,7 @@ export class HeaderComponent implements OnInit {
    *
    * Note that the original blender 3D file is available in [mahozad repository](https://github.com/mahozad/mahozad/tree/master/3d-renders/blender).
    *
-   * To create a photorealistic material in three.js see https://www.youtube.com/watch?v=aJun0Q0CG_A
+   * To create a photorealistic material in Three.js see https://www.youtube.com/watch?v=aJun0Q0CG_A
    *
    * To animate the alpha see
    * https://discourse.threejs.org/t/how-to-animate-alpha-in-blender-and-export-gltf-to-three-js/5428
@@ -54,7 +54,7 @@ export class HeaderComponent implements OnInit {
    * which was used for the example link above (https://github.com/mrdoob/three.js/blob/master/examples/webgl_loader_gltf.html).
    * High-quality HDRs and more are also available in [Poly Haven](https://polyhaven.com/).
    *
-   * An alternative for three.js could be [Babylon.js](https://github.com/BabylonJS/Babylon.js).
+   * An alternative for Three.js could be [Babylon.js](https://github.com/BabylonJS/Babylon.js).
    *
    * In Blender, to make the camera follow an object and animate along a path
    * see https://youtu.be/LeYUk3Ob5W8
@@ -106,7 +106,7 @@ export class HeaderComponent implements OnInit {
         this.scene.environment = hdr;
         // this.scene.background = hdr; // Show the environment as background as well
 
-        // To uncompress the gltf data if it is compressed.
+        // To uncompress the glTF data if it is compressed.
         // Grab the latest version of draco_wasm_wrapper.js and draco_decoder.wasm from
         // <project-path>\node_modules\three\examples\js\libs\draco\ and place them in the
         // directory specified below in `setDecoderPath()`.

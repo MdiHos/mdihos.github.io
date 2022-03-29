@@ -54,17 +54,18 @@
   }
 }
 
+// NOTE: Do not drop the px unit from the value so it works in firefox as well
 @keyframes drop2 {
-  to { y: 6; }
+  to { y: 6px; }
 }
 
 @keyframes drop3 {
-  to { y: 12; }
+  to { y: 12px; }
 }
 
 @keyframes drop4 {
   to {
-    y: 16;
+    y: 16px;
     opacity: 0;
   }
 }

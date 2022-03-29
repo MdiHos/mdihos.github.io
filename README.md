@@ -1,5 +1,8 @@
 # Mahozad Angular
 
+To build the website, run the npm script `build:pod` or execute IDEA *Build for Production * run config
+and then copy the result files to the *website* branch of the repository. 
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.6.
 Make sure to first install Angular CLI with the command `npm install -g @angular/cli`.
 

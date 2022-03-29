@@ -1,9 +1,7 @@
 import {Directive, ElementRef, Output, EventEmitter, HostListener} from '@angular/core';
 
 // See https://stackoverflow.com/a/42643593/8583692
-@Directive({
-  selector: '[clickOutside]'
-})
+@Directive({ selector: '[clickOutside]' })
 export class ClickOutsideDirective {
   constructor(private _elementRef: ElementRef) {}
 
@@ -12,9 +10,7 @@ export class ClickOutsideDirective {
 
   @HostListener('document:click', ['$event', '$event.target'])
   public onClick(event: MouseEvent, targetElement: HTMLElement): void {
-    if (!targetElement) {
-      return;
-    }
+    if (!targetElement) { return; }
 
     const clickedInside = this._elementRef.nativeElement.contains(targetElement);
     if (!clickedInside) {

@@ -42,14 +42,11 @@
   --body-background-color: #fff;
   --header-icons-color: #8a6d01ee;
   --stats-loading-icon-color: #333;
+  scroll-behavior: smooth;
+  background: var(--body-background-color);
   // NOTE: No need to transition other properties because user has to scroll to top to click the switch theme icon and
   //  the only thing that changes and is visible at the top of the page is background colors
   transition: background-color 300ms ease;
-}
-
-html {
-  scroll-behavior: smooth;
-  background: var(--body-background-color);
 }
 
 :root[data-theme="dark"] {

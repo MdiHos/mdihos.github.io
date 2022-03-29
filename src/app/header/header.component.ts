@@ -117,8 +117,8 @@ export class HeaderComponent implements OnInit {
         new GLTFLoader()
           .setPath('assets/3d-logo/')
           .setDRACOLoader(dracoLoader)
-          .load('logo.glb', gltf => {
-            const model = gltf.scene;
+          .load('logo.glb', glTF => {
+            const model = glTF.scene;
             // const envMapLoader = new THREE.PMREMGenerator(renderer);
             // const environmentMap = envMapLoader.fromCubemap(hdr);
             // const material = new THREE.MeshPhysicalMaterial/* OR MeshStandardMaterial */({
@@ -145,11 +145,11 @@ export class HeaderComponent implements OnInit {
             });
 
             this.scene.add(model);
-            this.camera = gltf.cameras[0];
+            this.camera = glTF.cameras[0];
             this.resize();
 
-            const mixer = new THREE.AnimationMixer(gltf.scene /* OR camera */);
-            const animation = mixer.clipAction(gltf.animations[0]);
+            const mixer = new THREE.AnimationMixer(glTF.scene /* OR camera */);
+            const animation = mixer.clipAction(glTF.animations[0]);
             // animation.setLoop(THREE.LoopPingPong);
             animation.timeScale = 1 / 3;
             animation.play();

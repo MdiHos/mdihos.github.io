@@ -98,3 +98,13 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## TODOs
+  - Create a svelte version of the application (just for fun and learning and showcasing)
+    To do this, create a new git branch for the svelte version.
+  - Update the style of the site scrollbar (see YouTube scrollbar)
+  - Create a print version of the site
+  - Link to a new page containing my logos showcase (including my M logo)
+    Or add a button in the current projects card which flips that card to show the logos on the back
+  - Add resume download link
+  - Create and show a 404 page or redirect to home page with a prompt when a page is not found

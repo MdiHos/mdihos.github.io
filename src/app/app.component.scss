@@ -31,6 +31,10 @@
   div:first-of-type {
     margin-block-start: 12px;
   }
+
+  #sourceLink {
+    color: var(--link-color);
+  }
 }
 
 theme-switch {
@@ -47,7 +51,7 @@ theme-switch {
 
 #info.expanded {
   width: 130px;
-  height: 110px;
+  height: 128px;
   border-radius: 14%;
 }
 
@@ -126,7 +130,7 @@ footer {
 @media screen and (max-width: 1000px) {
   #info.expanded {
     width: 110px;
-    height: 94px;
+    height: 118px;
     border-radius: 14%;
     font-size: 10px;
   }

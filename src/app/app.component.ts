@@ -7,6 +7,7 @@ import {formatDate} from '@angular/common';
 // TODO: These code are mostly duplicate as the one in honor-list component.
 //  Create a service and refactor duplicate code to it.
 
+const siteSourceURL: string = 'https://github.com/mahozad/mahozad.github.io';
 const githubRestURL: string = 'https://api.github.com/repos/mahozad/mahozad.github.io/commits?per_page=1';
 const notAvailable: string = 'N/A';
 // const options: DateTimeFormatOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
@@ -58,5 +59,11 @@ export class AppComponent implements OnInit {
 
     // Return an observable with a user-facing error message.
     return throwError(() => 'Could not fetch the resource.');
+  }
+
+  // Had to use this method to open the link (instead of a regular <a> element)
+  // because by clicking on <a> link the info boxed closed and browser didn't open that link
+  openSiteSourceLink() {
+    window.open(siteSourceURL, "_blank");
   }
 }

@@ -62,8 +62,8 @@ export class AppComponent implements OnInit {
   }
 
   // Had to use this method to open the link (instead of a regular <a> element)
-  // because by clicking on <a> link the info boxed closed and browser didn't open that link
-  openSiteSourceLink() {
+  // because by clicking on <a> the info boxed closed and browser didn't open that link
+  openSourceCodeLink() {
     window.open(siteSourceURL, "_blank");
   }
 }

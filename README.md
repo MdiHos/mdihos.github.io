@@ -26,7 +26,6 @@ It is possible to deploy directly to GitHub pages with the official
 To make the angular server available over local network (for example to access
 it with a mobile phone on the same network), see [this post](https://stackoverflow.com/q/43071535).
 
-
 ### Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
@@ -38,6 +37,9 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 ### Running end-to-end tests
 Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+
+### Updating npm dependencies
+See [this article](https://www.carlrippon.com/upgrading-npm-dependencies/).
 
 ## Some useful commands
 

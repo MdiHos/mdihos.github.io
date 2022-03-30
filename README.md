@@ -9,6 +9,7 @@
   Or add a button in the current projects card which flips that card to show the logos on the back
 - Add resume download link
 - Create and show a 404 page or redirect to home page with a prompt when a page is not found
+- Add Persian localization for the site
 
 ## Build and deployment
 

@@ -43,11 +43,32 @@
   --header-icons-color: #8a6d01ee;
   --stats-loading-icon-color: #333;
   --theme-switch-icon-color: var(--header-icons-color);
+  --scrollbar-thumb-color: #3334;
+  --scrollbar-track-color: #1111;
   scroll-behavior: smooth;
   background: var(--body-background-color);
   // NOTE: No need to transition other properties because user has to scroll to top to click the switch theme icon and
   //  the only thing that changes and is visible at the top of the page is background colors
   transition: background-color 300ms ease;
+}
+
+// Update the style of the scrollbar
+// See https://developer.mozilla.org/en-US/docs/Web/CSS/::-webkit-scrollbar
+:root {
+  // This is for Firefox only
+  scrollbar-color: var(--scrollbar-thumb-color) var(--scrollbar-track-color);
+
+  // This is for browsers other than Firefox and Safari
+  ::-webkit-scrollbar {
+    background: var(--scrollbar-track-color);
+    width: 12px;
+  }
+
+  // This is for browsers other than Firefox and Safari
+  ::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb-color);
+    border-radius: 8px;
+  }
 }
 
 :root[data-theme="dark"] {
@@ -65,4 +86,6 @@
   --info-text-color: var(--color-yellow-5);
   --link-color: #00b9ff;
   --stats-loading-icon-color: #ddd;
+  --scrollbar-thumb-color: #eee4;
+  --scrollbar-track-color: #eee1;
 }

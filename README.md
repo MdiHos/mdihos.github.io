@@ -79,6 +79,10 @@ To make 3D logos, we can use the following tools:
   
 See [this YouTube playlist](https://youtube.com/playlist?list=PLD8AMy73ZVxXnHR_aXT8czc6SHDa0jV7F).
 
+See this very good YouTube video [Beginners guide to photorealism](https://youtu.be/Z8AAX-ENWvQ) explaining
+lights, materials, optics, camera, and so on
+
+
 ## Fonts
 
 The main header uses a serif font called *Roboto Slab*.

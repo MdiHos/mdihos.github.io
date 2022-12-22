@@ -2,6 +2,7 @@
 
 ## TODOs
 
+- Add grain to the 3D M logo: https://www.google.com/search?q=blender+add+grain&oq=blender+add+grain
 - Create a svelte version of the application (just for fun and learning and showcasing)  
   To do this, create a new Git branch for the svelte version
 - Create a print version of the site

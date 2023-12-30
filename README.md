@@ -12,6 +12,13 @@
 - Create and show a 404 page or redirect to home page with a prompt when a page is not found
 - Add Persian localization for the site
 
+## Adding subdomains
+For adding a subdomain like *blog*.mahozad.ir we can create a separate repository
+with a CNAME file in it containing `blog.mahozad.ir` and creating a CNAME record
+in our DNS provider with key `blog.mahozad.ir` and value `mahozad.github.io`.
+
+See https://youtu.be/-pJq3XZQbt0
+
 ## Build and deployment
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli).

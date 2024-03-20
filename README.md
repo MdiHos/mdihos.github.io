@@ -24,8 +24,8 @@ See https://youtu.be/-pJq3XZQbt0
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli).
 Make sure to first install Angular CLI with the command `npm install -g @angular/cli`.
 
-To build the website, run the npm script `build:pod` or execute IDEA *Build for Production * run config
-and then copy the result files to the base branch of the repository.
+To build the website, run the npm script `build:prod` or execute IDEA *Build for Production * run config
+and then copy the result files to the website branch of the repository.
 For more information see [this post](https://stackoverflow.com/q/51127798).
 
 It is possible to deploy directly to GitHub pages with the official
@@ -66,6 +66,8 @@ ng add apollo-angular
 ```
 
 ## 3D images
+
+See [src/assets/3d-logo/README.md](src/assets/3d-logo/README.md) for more information.
 
 The original 3D images of the "M" logo are in the [mahozad repository](https://github.com/mahozad/mahozad).
 

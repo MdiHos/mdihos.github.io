@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {EXRLoader} from 'three/examples/jsm/loaders/EXRLoader.js';
 import {GLTFLoader} from 'three/examples/jsm/loaders/GLTFLoader.js';
 import {DRACOLoader} from 'three/examples/jsm/loaders/DRACOLoader.js';
+import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls.js';
 import * as THREE from 'three';
 
 @Component({
@@ -145,17 +146,30 @@ export class HeaderComponent implements OnInit {
             });
 
             this.scene.add(model);
-            this.camera = glTF.cameras[0];
+            // See https://stackoverflow.com/q/23450588
+            const aspect = window.innerWidth / window.innerHeight;
+            const d = 20;
+            this.camera = new THREE.OrthographicCamera( - d * aspect, d * aspect, d, - d, 1, 1000 );
+            this.camera.position.set( -10, 20, 20 );
+            this.camera.lookAt( this.scene.position );
+            this.camera.zoom = 2;
             this.resize();
 
-            const mixer = new THREE.AnimationMixer(glTF.scene /* OR camera */);
-            const animation = mixer.clipAction(glTF.animations[0]);
-            // animation.setLoop(THREE.LoopPingPong);
-            animation.timeScale = 1 / 3;
-            animation.play();
+            // For the automatic camera movement animation see the corresponding Git branch
+
+            const controls = new OrbitControls( this.camera, this.renderer.domElement );
+            controls.enableZoom = false; // To prevent consuming the mouse scroll
+            controls.addEventListener( 'change', () => this.renderer.render(this.scene, this.camera) );
+            controls.minDistance = 2;
+            controls.maxDistance = 10;
+            // See https://discourse.threejs.org/t/limit-camera-movement-on-vertical-axis-with-orbitcontrols/20792
+            // and https://threejs.org/docs/#examples/en/controls/OrbitControls.maxPolarAngle
+            controls.minPolarAngle = Math.PI / 5.5;
+            controls.maxPolarAngle = Math.PI / 2.5;
+            controls.target.set( 0, 0, -0.2 );
+            controls.update();
 
             this.is3DLogoLoading = false;
-            this.animate(mixer);
           }, () => {}, undefined, error => {
             alert(error);
           });
